@@ -37,7 +37,7 @@ export default function Home() {
             <img src="https://sss-dashboard.leanservices.work/upload/7-2022/1657272384575.jpeg"
               className="d-block w-100" alt="img1" />
             <div className="carousel-caption d-none d-md-block">
-              <h5>Siêu Sale tháng 7</h5>
+              <h5>Siêu Sale tháng 9</h5>
               <p>Áp dụng cho hầu hết các mặt hàng áo polo và quần âu</p>
             </div>
           </div>

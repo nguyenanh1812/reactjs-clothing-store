@@ -1,6 +1,94 @@
-.text-center {
-    text-align: center;
+/* what's new */
+.new-clothes {
+    background: #aabec6;
+    height: auto;
+    color: #ffffff;
 }
+
+.new-clothes__header {
+    padding-top: 70px;
+    padding-bottom: 20px;
+    font-size: 45px;
+    font-weight: 700;
+}
+
+.new-clothes__link div{
+    cursor: pointer;
+    font-size: 21px;
+    font-weight: 550;
+    display: inline;
+    padding: 20px;
+    text-decoration: none;
+}
+
+.new-clothes__link--item {
+    position: relative;
+    color: white;
+    margin-left: 20px;
+}
+
+.new-clothes__link--item::after {
+    position: absolute;
+    background-color: white;
+    content: "";
+    bottom: 10px;
+    height: 3px;
+    left: 10px;
+    right: 10px;
+    width: 0%;
+}
+
+.new-clothes__link--item::before {
+    position: absolute;
+    background-color: rgb(143, 48, 48);
+    content: "";
+    top: 10px;
+    left: 100px;
+    right: 0;
+    width: 5px;
+    height: 5px;
+    border-radius: 50px;
+    opacity: 0;
+}
+
+.clothes__link--hover:hover .new-clothes__link--item::after {
+    width: 85%;
+    transition: 0.6s;
+}
+
+.clothes__link--hover:hover>div{
+    color: white;
+}
+
+.clothes__link--hover:hover .new-clothes__link--item::before {
+    opacity: 1;
+    transition: 0.6s;
+}
+
+/* active link */
+.active-link-new {
+    position: absolute;
+    background-color: rgb(143, 48, 48);
+    content: "";
+    top: 10px;
+    left: 100px;
+    right: 0;
+    width: 5px;
+    height: 5px;
+    border-radius: 50px;
+}
+
+.active-link-new::before {
+    position: absolute;
+    background-color: white;
+    content: "";
+    bottom: -38px;
+    height: 3px;
+    left: -90px;
+    right: 10px;
+    width: 100px;
+}
+
 .owl-carousel{
     position: relative;
     cursor: pointer;
@@ -19,11 +107,9 @@
     width: 100px;
     border: none;
     padding: 10px 0;
-    border-radius: 1000px;
     font-weight: 700;
     cursor: pointer;
-    background-color: rgba(255, 255, 255, 0.4);
-    color: rgba(0, 0, 0, 0.9);
+    color: #60b0d3d1;
 }
 .owl-theme .owl-nav {
     margin: 0px;

@@ -1,4 +1,4 @@
-const newShirts = [
+export const newShirts = [
     {
       id: 1,
       imgURL: 'https://xcimg.szwego.com/20210422/i1619089488_4713_0.jpg',
