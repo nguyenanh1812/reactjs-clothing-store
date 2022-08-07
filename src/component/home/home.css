@@ -36,6 +36,10 @@
         font-size: 40px;
     }
 
+    .carousel-caption, .carousel-control-next-icon, .carousel-control-prev-icon {
+        display: none;
+    }
+
     .img-clothes-men img {
         width: 50%;
         height: auto;
@@ -50,7 +54,5 @@
 }
 
 /* banner mid - smart pants */
-/* WEEKLY BEST */
-.text-black .new-clothes__link--item::after {
-    background-color: black ;
-}
+
+

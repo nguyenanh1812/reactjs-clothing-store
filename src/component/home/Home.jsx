@@ -1,6 +1,8 @@
 import React from 'react'
+import Carousel from 'react-bootstrap/Carousel';
 import Header from '../header/Header'
-import Slide from '../slideCarousel/Slide'
+import NewShirts from '../newShirts/NewShirts'
+import WeeklyBest from '../weeklyBest/WeeklyBest';
 import './home.css'
 
 export default function Home() {
@@ -8,65 +10,55 @@ export default function Home() {
     <>
       <Header />
 
-      <div id="carouselExampleSlidesOnly" className="carousel slide" data-bs-ride="carousel">
-        <div className="carousel-inner">
-          <div className="carousel-item active">
-            <div className="bg-dark p-2 text-white text-center">Đóng giá ship chỉ 10.000đ cho đơn HN và SG</div>
-          </div>
-          <div className="carousel-item">
-            <div className="bg-dark p-2 text-white text-center">Ưu đãi giảm giá 10.000đ cho đơn trả trước</div>
-          </div>
-          <div className="carousel-item">
-            <div className="bg-dark p-2 text-white text-center">Đóng giá ship chỉ 30.000đ cho toàn quốc</div>
-          </div>
-        </div>
-      </div>
+      {/* ship */}
+      <Carousel className='ship-price' interval={5000} indicators={false} controls={false} slide={true}>
+        <Carousel.Item>
+          <div className="bg-dark p-2 text-white text-center">Đóng giá ship chỉ 30.000đ cho toàn quốc</div>
+        </Carousel.Item>
+        <Carousel.Item>
+          <div className="bg-dark p-2 text-white text-center">Ưu đãi giảm giá 10.000đ cho đơn trả trước</div>
+        </Carousel.Item>
+        <Carousel.Item>
+          <div className="bg-dark p-2 text-white text-center">Đóng giá ship chỉ 10.000đ cho đơn HN và SG</div>
+        </Carousel.Item>
+      </Carousel>
 
       {/* <!-- banner top --> */}
-      <div id="carouselExampleDark" className="carousel carousel-dark slide" data-bs-ride="carousel">
-        <div className="carousel-indicators">
-          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" className="active"
-            aria-current="true" aria-label="Slide 1"></button>
-          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1"
-            aria-label="Slide 2"></button>
-          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2"
-            aria-label="Slide 3"></button>
-        </div>
-        <div className="carousel-inner">
-          <div className="carousel-item active" data-bs-interval="10000">
-            <img src="https://sss-dashboard.leanservices.work/upload/7-2022/1657272384575.jpeg"
-              className="d-block w-100" alt="img1" />
-            <div className="carousel-caption d-none d-md-block">
-              <h5>Siêu Sale tháng 9</h5>
-              <p>Áp dụng cho hầu hết các mặt hàng áo polo và quần âu</p>
-            </div>
-          </div>
-          <div className="carousel-item" data-bs-interval="2000">
-            <img src="https://sss-dashboard.leanservices.work/upload/7-2022/1657247385857.jpeg"
-              className="d-block w-100" alt="img2" />
-            <div className="carousel-caption d-none d-md-block">
-              <h5>Đa dạng mẫu mã</h5>
-              <p>Tối giản nhưng sang trọng lịch thiệp</p>
-            </div>
-          </div>
-          <div className="carousel-item">
-            <img src="https://sss-dashboard.leanservices.work/upload/7-2022/1657248131185.jpeg"
-              className="d-block w-100" alt="img3" />
-            <div className="carousel-caption d-none d-md-block">
-              <h5>Thoải mái phá cách</h5>
-              <p>Nhiều mẫu áo đặc biệt phù hợp với nhiều phong cách</p>
-            </div>
-          </div>
-        </div>
-        <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
-          <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span className="visually-hidden">Previous</span>
-        </button>
-        <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
-          <span className="carousel-control-next-icon" aria-hidden="true"></span>
-          <span className="visually-hidden">Next</span>
-        </button>
-      </div>
+      <Carousel variant="dark" interval={6000} indicators={false} slide={true}>
+        <Carousel.Item>
+          <img
+            className="d-block w-100"
+            src="https://sss-dashboard.leanservices.work/upload/7-2022/1657272384575.jpeg"
+            alt="First slide"
+          />
+          <Carousel.Caption>
+            <h5>Siêu Sale tháng 9</h5>
+            <p>Áp dụng cho hầu hết các mặt hàng áo polo và quần âu</p>
+          </Carousel.Caption>
+        </Carousel.Item>
+        <Carousel.Item>
+          <img
+            className="d-block w-100"
+            src="https://sss-dashboard.leanservices.work/upload/7-2022/1657247385857.jpeg"
+            alt="Second slide"
+          />
+          <Carousel.Caption>
+            <h5>Đa dạng mẫu mã</h5>
+            <p>Tối giản nhưng sang trọng lịch thiệp</p>
+          </Carousel.Caption>
+        </Carousel.Item>
+        <Carousel.Item>
+          <img
+            className="d-block w-100"
+            src="https://sss-dashboard.leanservices.work/upload/7-2022/1657248131185.jpeg"
+            alt="Third slide"
+          />
+          <Carousel.Caption>
+            <h5>Thoải mái phá cách</h5>
+            <p>Nhiều mẫu áo đặc biệt phù hợp với nhiều phong cách</p>
+          </Carousel.Caption>
+        </Carousel.Item>
+      </Carousel>
 
       {/* <!-- for him & for her --> */}
       <div className="row">
@@ -85,32 +77,36 @@ export default function Home() {
       </div>
 
       {/* <!-- show slide new Clothes --> */}
-      <Slide />
+      <NewShirts />
 
       <div style={{ margin: '50px 0' }}>
-        <div id="carouselExampleControls" className="carousel slide" data-bs-ride="carousel">
-          <div className="carousel-inner">
-            <div className="carousel-item active">
-              <img src="https://sss-dashboard.leanservices.work/upload/6-2022/1654482697748.jpeg"
-                className="d-block w-100" alt="..." />
-            </div>
-            <div className="carousel-item">
-              <img src="https://sss-dashboard.leanservices.work/upload/6-2022/1654482574066.jpeg"
-                className="d-block w-100" alt="..." />
-            </div>
-          </div>
-          <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
-            data-bs-slide="prev">
-            <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span className="visually-hidden">Previous</span>
-          </button>
-          <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
-            data-bs-slide="next">
-            <span className="carousel-control-next-icon" aria-hidden="true"></span>
-            <span className="visually-hidden">Next</span>
-          </button>
-        </div>
+        <Carousel interval={6000} indicators={false} slide={true}>
+        <Carousel.Item>
+          <img
+            className="d-block w-100"
+            src="https://sss-dashboard.leanservices.work/upload/6-2022/1654482574066.jpeg"
+            alt="First slide"
+          />
+        </Carousel.Item>
+        <Carousel.Item>
+          <img
+            className="d-block w-100"
+            src="https://sss-dashboard.leanservices.work/upload/6-2022/1654482697748.jpeg"
+            alt="Second slide"
+          />
+        </Carousel.Item>
+        <Carousel.Item>
+          <img
+            className="d-block w-100"
+            src="https://sss-dashboard.leanservices.work/upload/8-2022/1659522122144.jpeg"
+            alt="3th slide"
+          />
+        </Carousel.Item>
+      </Carousel>
       </div>
+
+      <WeeklyBest />
+
     </>
   )
 }

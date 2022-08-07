@@ -1,0 +1,4 @@
+/* WEEKLY BEST */
+.text-black .new-clothes__link--item::after {
+    background-color: black ;
+}
