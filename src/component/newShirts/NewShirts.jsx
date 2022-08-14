@@ -7,22 +7,22 @@ import "swiper/css/pagination";
 import { Pagination, Autoplay, Navigation } from "swiper";
 
 export default function Slide() {
-  const [listShirt, setList] = useState(
-    newShirts.filter((shirt) => shirt.forMan)
-  );
+  // const [listShirt, setList] = useState(
+  //   newShirts.filter((shirt) => shirt.forMan)
+  // );
   const [man, setForMan] = useState(true);
 
   const genderChange = () => {
     setForMan(!man);
   };
 
-  useEffect(() => {
-    if (man) {
-      setList(newShirts.filter((shirt) => shirt.forMan));
-    } else {
-      setList(newShirts.filter((shirt) => !shirt.forMan));
-    }
-  }, [man]);
+  // useEffect(() => {
+  //   if (man) {
+  //     setList(newShirts.filter((shirt) => shirt.forMan));
+  //   } else {
+  //     setList(newShirts.filter((shirt) => !shirt.forMan));
+  //   }
+  // }, [man]);
 
   return (
     <>
@@ -61,8 +61,8 @@ export default function Slide() {
           pagination={{
             clickable: true,
           }}
-          // loop={true}
-          // loopFillGroupWithBlank={true}
+          loop={true}
+          loopFillGroupWithBlank={true}
           autoplay={{
             delay: 2500,
             disableOnInteraction: false,
@@ -86,7 +86,7 @@ export default function Slide() {
         >
           {newShirts.map(
             (shirt) =>
-              shirt.forMan == man && (
+              shirt.forMan === man && (
                 <SwiperSlide>
                   <div key={shirt.id} className="item px-1">
                     <img
