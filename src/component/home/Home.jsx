@@ -61,7 +61,7 @@ export default function Home() {
       </Carousel>
 
       {/* <!-- for him & for her --> */}
-      <div className="row">
+      <div className="row row-responsive">
         <div className="col-sm-6">
           <div className="bg-for-him-her"
             style={{ backgroundImage: "url('https://image.uniqlo.com/UQ/ST3/vn/imagesgoods/448364/item/vngoods_62_448364.jpg?width=1600&impolicy=quality_75')" }}>

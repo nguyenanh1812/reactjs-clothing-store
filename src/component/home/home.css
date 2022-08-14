@@ -28,6 +28,12 @@
         width: 33%;
         height: auto;
     }
+
+    .row-responsive, .row-responsive .col-sm-6 {
+        margin-right: 0!important;
+        padding: 0!important;
+    }
+
 }
 
 @media (max-width: 768px) {
