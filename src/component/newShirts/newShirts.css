@@ -2,7 +2,7 @@
 .new-clothes {
     background: #aabec6;
     height: auto;
-    color: #ffffff;
+    color: white;
 }
 
 .new-clothes__header {
@@ -38,31 +38,33 @@
     width: 0%;
 }
 
-.new-clothes__link--item::before {
-    position: absolute;
-    background-color: rgb(143, 48, 48);
-    content: "";
-    top: 10px;
-    left: 100px;
-    right: 0;
-    width: 5px;
-    height: 5px;
-    border-radius: 50px;
-    opacity: 0;
-}
-
-.clothes__link--hover:hover .new-clothes__link--item::after {
-    width: 85%;
-    transition: 0.6s;
-}
-
-.clothes__link--hover:hover>div{
-    color: white;
-}
-
-.clothes__link--hover:hover .new-clothes__link--item::before {
-    opacity: 1;
-    transition: 0.6s;
+@media screen and (min-width: 992px) {
+    .new-clothes__link--item::before {
+        position: absolute;
+        background-color: rgb(143, 48, 48);
+        content: "";
+        top: 10px;
+        left: 100px;
+        right: 0;
+        width: 5px;
+        height: 5px;
+        border-radius: 50px;
+        opacity: 0;
+    }
+    
+    .clothes__link--hover:hover .new-clothes__link--item::after {
+        width: 85%;
+        transition: 0.6s;
+    }
+    
+    .clothes__link--hover:hover>div{
+        color: white;
+    }
+    
+    .clothes__link--hover:hover .new-clothes__link--item::before {
+        opacity: 1;
+        transition: 0.6s;
+    }
 }
 
 /* active link */
@@ -91,15 +93,25 @@
 
 /* slide  */
 .swiper-slide {
-    margin: 20px 0 20px 0;
+    margin: 20px 0 30px 0;
 }
 .swiper-slide img {
   display: block;
   width: 100%;
-  height: 100%;
+  height: 550px;
   object-fit: cover;
 }
 
-@media only screen and (max-width: 1024px) and (min-width: 590px) {
-   
+
+@media only screen and (max-width: 1440px) and (min-width: 1024px) {
+   .swiper-slide img {
+    height: 450px;
+    width: 100%;
+   }
+}
+
+@media screen and (max-width: 768px) {
+    .swiper-button-next::after, .swiper-button-prev::after {
+        display: none;
+    }
 }

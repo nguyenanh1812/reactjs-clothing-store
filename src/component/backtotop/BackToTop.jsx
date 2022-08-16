@@ -20,7 +20,7 @@ export default function BackToTop() {
   }
   return (
     toTop &&
-    (<div className='BtnBackToTop' onClick={toTop2} ><i class="fas fa-chevron-circle-up"></i></div>)
+    (<div className='BtnBackToTop' onClick={toTop2} ><i className="fas fa-chevron-circle-up"></i></div>)
 
   )
 }

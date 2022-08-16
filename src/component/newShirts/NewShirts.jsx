@@ -4,25 +4,15 @@ import { newShirts } from "./data";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
+import "swiper/css/navigation";
 import { Pagination, Autoplay, Navigation } from "swiper";
 
 export default function Slide() {
-  // const [listShirt, setList] = useState(
-  //   newShirts.filter((shirt) => shirt.forMan)
-  // );
   const [man, setForMan] = useState(true);
 
   const genderChange = () => {
     setForMan(!man);
   };
-
-  // useEffect(() => {
-  //   if (man) {
-  //     setList(newShirts.filter((shirt) => shirt.forMan));
-  //   } else {
-  //     setList(newShirts.filter((shirt) => !shirt.forMan));
-  //   }
-  // }, [man]);
 
   return (
     <>
@@ -62,21 +52,22 @@ export default function Slide() {
             clickable: true,
           }}
           loop={true}
+          navigation={true}
           loopFillGroupWithBlank={true}
           autoplay={{
             delay: 2500,
             disableOnInteraction: false,
           }}
           breakpoints={{
-            640: {
+            586: {
               slidesPerView: 2,
               spaceBetween: 20,
             },
-            768: {
+            1024: {
               slidesPerView: 4,
               spaceBetween: 40,
             },
-            1024: {
+            1440: {
               slidesPerView: 5,
               spaceBetween: 50,
             },
@@ -89,11 +80,7 @@ export default function Slide() {
               shirt.forMan === man && (
                 <SwiperSlide>
                   <div key={shirt.id} className="item px-1">
-                    <img
-                      style={{ height: "550px" }}
-                      src={shirt.imgURL}
-                      alt="shirt img"
-                    />
+                    <img src={shirt.imgURL} alt="shirt img" />
                     <h4 className="text-center mt-3">{shirt.name}</h4>
                     <p className="text-center">Giá: {shirt.price} đ</p>
                   </div>
