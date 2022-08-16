@@ -1,5 +1,6 @@
 import React from 'react'
 import Carousel from 'react-bootstrap/Carousel';
+import Footer from '../footer/Footer';
 import Header from '../header/Header'
 import NewShirts from '../newShirts/NewShirts'
 import WeeklyBest from '../weeklyBest/WeeklyBest';
@@ -117,7 +118,7 @@ export default function Home({clothes}) {
       </div>
 
       <WeeklyBest clothes={clothes}/>
-
+      <Footer />
     </>
   )
 }

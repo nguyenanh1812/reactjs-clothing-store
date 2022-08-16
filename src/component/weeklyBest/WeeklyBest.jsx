@@ -12,8 +12,8 @@ export default function WeeklyBest({ clothes }) {
   return (
     <>
       {/* <!-- WEEKLY BEST --> */}
-      <div style={{ background: "lightgray" }}>
-        <div className="container-fluid p-2">
+      <div style={{ background: "#d9d9d9" }}>
+        <div className="container-fluid">
           <div className="text-center mb-2">
             <div className="new-clothes__header">WEEKLY BEST</div>
             <div className="new-clothes__link">
@@ -57,7 +57,7 @@ export default function WeeklyBest({ clothes }) {
           </div>
         </div>
 
-        <div className="container mt-2">
+        <div className="container mt-3">
           <div className="row">
             {clothes.map(
               (shirt) =>
@@ -78,7 +78,7 @@ export default function WeeklyBest({ clothes }) {
                         <a
                           href="#product-link"
                           className="my-1"
-                          style={{ color: "black", textDecoration: "none", color: "dimgray", fontSize: '160%' }}
+                          style={{ textDecoration: "none", color: "dimgray", fontSize: '160%' }}
                         >
                           {shirt.name}
                         </a>
