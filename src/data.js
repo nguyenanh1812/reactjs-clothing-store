@@ -3,7 +3,7 @@
 //3: túi
 //4: mũ
 //5: váy
-export const newShirts = [
+export const clothes = [
     {
       id: 1,
       typeId: 2,
@@ -182,6 +182,15 @@ export const newShirts = [
       name: 'BI BQ',
       price: '389.000',
       forMan: false,
+      new: false,
+    },
+    {
+      id: 21,
+      typeId: 1,
+      imgURL: 'https://cdn.ssstutter.com/products/po0EUQXd52Ks47dT/062022/1655470074135.jpeg',
+      name: 'BzI Pant',
+      price: '489.000',
+      forMan: true,
       new: false,
     },
   ]

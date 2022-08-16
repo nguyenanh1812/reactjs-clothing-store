@@ -5,7 +5,7 @@ import NewShirts from '../newShirts/NewShirts'
 import WeeklyBest from '../weeklyBest/WeeklyBest';
 import './home.css'
 
-export default function Home() {
+export default function Home({clothes}) {
   return (
     <>
       <Header />
@@ -58,6 +58,17 @@ export default function Home() {
             <p>Nhiều mẫu áo đặc biệt phù hợp với nhiều phong cách</p>
           </Carousel.Caption>
         </Carousel.Item>
+        {/* <Carousel.Item>
+          <img
+            className="d-block w-100"
+            src="https://sss-dashboard.leanservices.work/upload/8-2022/1660026916137.jpeg"
+            alt="4th slide"
+          />
+          <Carousel.Caption>
+            <h5>Siêu sale mừng website mới</h5>
+            <p>Áp dụng với tất cả các sản phẩm áo thun</p>
+          </Carousel.Caption>
+        </Carousel.Item> */}
       </Carousel>
 
       {/* <!-- for him & for her --> */}
@@ -105,7 +116,7 @@ export default function Home() {
       </Carousel>
       </div>
 
-      <WeeklyBest />
+      <WeeklyBest clothes={clothes}/>
 
     </>
   )

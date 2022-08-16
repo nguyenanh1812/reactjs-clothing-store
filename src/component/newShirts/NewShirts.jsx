@@ -52,7 +52,7 @@ export default function Slide() {
             clickable: true,
           }}
           loop={true}
-          navigation={true}
+          // navigation={true}
           loopFillGroupWithBlank={true}
           autoplay={{
             delay: 2500,
@@ -65,28 +65,30 @@ export default function Slide() {
             },
             1024: {
               slidesPerView: 4,
-              spaceBetween: 40,
+              spaceBetween: 30,
             },
             1440: {
               slidesPerView: 5,
-              spaceBetween: 50,
+              spaceBetween: 40,
             },
           }}
           modules={[Pagination, Autoplay, Navigation]}
           className="mySwiper"
         >
-          {newShirts.map(
-            (shirt) =>
-              shirt.forMan === man && (
-                <SwiperSlide>
-                  <div key={shirt.id} className="item px-1">
-                    <img src={shirt.imgURL} alt="shirt img" />
-                    <h4 className="text-center mt-3">{shirt.name}</h4>
-                    <p className="text-center">Giá: {shirt.price} đ</p>
-                  </div>
-                </SwiperSlide>
-              )
-          )}
+          {newShirts
+            .filter((newShirt) => newShirt.new)
+            .map(
+              (shirt) =>
+                shirt.forMan === man && (
+                  <SwiperSlide>
+                    <div key={shirt.id} className="item px-1">
+                      <img src={shirt.imgURL} alt="shirt img" />
+                      <h4 className="text-center mt-3">{shirt.name}</h4>
+                      <p className="text-center">Giá: {shirt.price} đ</p>
+                    </div>
+                  </SwiperSlide>
+                )
+            )}
         </Swiper>
 
         {/* <div className="slider_nav">
