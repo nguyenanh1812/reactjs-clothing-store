@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import './backtoptop.css'
+import './backtotop.css'
 
 export default function BackToTop() {
   const [toTop, setToTop] = useState(true)

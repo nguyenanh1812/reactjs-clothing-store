@@ -54,11 +54,12 @@ function Header() {
     <Navbar bg="white" expand="lg" className="position-fixed" style={{minHeight: "50px"}}>
       <Container>
         <Navbar.Brand href="#home" className="m-0 p-0">
-          <img
+          {/* <img
             src="https://is2-ssl.mzstatic.com/image/thumb/Purple124/v4/98/4d/3f/984d3f69-b706-ec8b-e379-e2c5213894a3/source/512x512bb.jpg"
             alt="logo"
             className="img-logo"
-          />
+          /> */}
+          <i className="far fa-snowflake" style={{fontSize: '150%'}}></i>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">

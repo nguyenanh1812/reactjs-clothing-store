@@ -12,6 +12,7 @@
     font-weight: 800;
     color: white;
     filter: brightness(90%);
+    cursor: pointer;
 }
 
 .bg-for-him-her:hover {

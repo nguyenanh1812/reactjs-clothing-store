@@ -11,8 +11,7 @@ export default function WeeklyBest({ clothes }) {
   };
   return (
     <>
-      {/* <!-- WEEKLY BEST --> */}
-      <div style={{ background: "#d9d9d9" }}>
+      <div style={{ background: "rgb(229 229 229)" }}>
         <div className="container-fluid">
           <div className="text-center mb-2">
             <div className="new-clothes__header">WEEKLY BEST</div>
@@ -56,42 +55,78 @@ export default function WeeklyBest({ clothes }) {
             </div>
           </div>
         </div>
-
-        <div className="container mt-3">
+        <div className="mt-3 mx-5">
           <div className="row">
-            {clothes.map(
-              (shirt) =>
-                shirt.forMan === man && (
-                  <div
-                    key={shirt.id}
-                    className="col-xxl-3 col-lg-4 col-md-6 my-1 home__product"
-                  >
-                    <div className="">
-                      <img
-                        src={shirt.imgURL}
-                        alt="product img"
-                        className="img-fluid"
-                      />
-                    </div>
-                    <div className="detail">
-                      <div className="info mt-2">
-                        <a
-                          href="#product-link"
-                          className="my-1"
-                          style={{ textDecoration: "none", color: "dimgray", fontSize: '160%' }}
+            {clothes
+              .filter((e) => e.percentDiscount >= 10)
+              .map(
+                (item) =>
+                  item.forMan === man && (
+                    <div
+                      key={item.id}
+                      className="col-xxl-3 col-lg-4 col-md-6 my-1 home__product"
+                    >
+                      <div className="position-relative">
+                        <img
+                          src={item.imgURL}
+                          alt="product img"
+                          className="img-fluid"
+                        />
+                        <div
+                          className="position-absolute text-white text-center"
+                          style={{
+                            background: "#9d2b2b",
+                            top: "0",
+                            right: "0",
+                            padding: "10px 0",
+                            width: "60px",
+                            fontWeight: "550",
+                            fontSize: "16px",
+                          }}
                         >
-                          {shirt.name}
-                        </a>
-                        <p className="mb-0" style={{color: 'black', fontWeight: '550'}}>
-                          {shirt.price}
-                          <span className="currency-symbol">₫</span>
-                        </p>
-                        <p>+4 màu</p>
+                          {item.percentDiscount}%
+                        </div>
+                      </div>
+                      <div className="detail">
+                        <div className="info mt-2">
+                          <a
+                            href="#product-link"
+                            className="my-1"
+                            style={{
+                              textDecoration: "none",
+                              color: "dimgray",
+                              fontSize: "160%",
+                            }}
+                          >
+                            {item.name}
+                          </a>
+                          <p
+                            className="mb-0"
+                            style={{ color: "black", fontWeight: "550" }}
+                          >
+                            {(
+                              item.price -
+                              (item.percentDiscount * item.price) / 100
+                            ).toFixed(3)}
+                            <span className="currency-symbol">₫</span>
+                            <span
+                              style={{
+                                color: "#919191",
+                                marginLeft: "6%",
+                                fontSize: "85%",
+                              }}
+                              className="text-decoration-line-through"
+                            >
+                              {item.price}
+                              <span className="currency-symbol">₫</span>
+                            </span>
+                          </p>
+                          <p>+{item.color.length} màu</p>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                )
-            )}
+                  )
+              )}
           </div>
         </div>
       </div>

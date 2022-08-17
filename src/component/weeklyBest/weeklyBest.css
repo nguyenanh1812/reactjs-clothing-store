@@ -7,6 +7,11 @@
     height: 430px;
     width: 100%;
     object-fit: cover;
+    cursor: pointer;
+}
+
+.home__product:hover {
+    filter: brightness(90%);
 }
 
 @media screen and (max-width: 768px) and (min-width: 425px) {
