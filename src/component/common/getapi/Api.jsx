@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 export default function Api() {
   const [api, setApi] = useState([]);
   useEffect(() => {
-    const getApi = axios
+    axios
       .get("https://jsonplaceholder.typicode.com/comments")
       .then((result) => {
         const commnets = result.data;
