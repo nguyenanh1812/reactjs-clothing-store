@@ -1,7 +1,8 @@
 import React from "react";
 import Carousel from "react-bootstrap/Carousel";
-import Footer from "../footer/Footer";
-import Header from "../header/Header";
+import Api from "../../common/getapi/Api";
+import Footer from "../../layout/footer/Footer";
+import Header from "../../layout/header/Header";
 import NewShirts from "../newShirts/NewShirts";
 import WeeklyBest from "../weeklyBest/WeeklyBest";
 import "./home.css";
@@ -142,6 +143,7 @@ export default function Home({ clothes }) {
       {/* <!-- WEEKLY BEST --> */}
       <WeeklyBest clothes={clothes} />
 
+            <Api />
       {/* footer */}
       <Footer />
     </>

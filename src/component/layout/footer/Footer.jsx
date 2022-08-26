@@ -1,10 +1,16 @@
 import React from "react";
 import "./footer.css";
+import styled from 'styled-components'
+
+const ContainerDiv = styled.div`
+  margin: 0 5%;
+  padding: 3% 0;
+`
 
 export default function Footer() {
   return (
     <footer>
-      <div style={{ margin: "0% 5%", padding: "3% 0" }}>
+      <ContainerDiv>
         <div className="row">
           <div className="col-lg-3 ps-0">
             <h5 className="footer--item__title">SSelegant</h5>
@@ -36,17 +42,17 @@ export default function Footer() {
           <div className="col-lg-3 ps-0">
             <h5 className="footer--item__title">SOCIAL</h5>
             <p className="social">
-              <i class="fab fa-facebook-f"></i>
-              <i class="fab fa-youtube"></i>
-              <i class="fab fa-instagram"></i>
-              <i class="fab fa-tiktok"></i>
+              <i className="fab fa-facebook-f"></i>
+              <i className="fab fa-youtube"></i>
+              <i className="fab fa-instagram"></i>
+              <i className="fab fa-tiktok"></i>
             </p>
           </div>
         </div>
         <div className="row my-1 py-2" style={{ borderTop: "1px solid black" }}>
           Copyright ⓒ by nguyenanh1812zxc@gmail.com
         </div>
-      </div>
+      </ContainerDiv>
     </footer>
   );
 }

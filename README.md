@@ -1,4 +1,10 @@
 DEMO: https://enchanting-peony-d18662.netlify.app/
+# Library
+npm i swiper
+npm i react-bootstrap bootstrap
+npm i --save styled-components
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

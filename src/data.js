@@ -1,8 +1,10 @@
-//1:áo
-//2: quần
-//3: túi
-//4: mũ
-//5: váy
+export const typeOfClothes = [
+  { id: 1, name: "áo" },
+  { id: 1, name: "quần" },
+  { id: 1, name: "túi" },
+  { id: 1, name: "mũ" },
+  { id: 1, name: "váy" },
+];
 export const clothes = [
   {
     id: 1,
@@ -24,7 +26,7 @@ export const clothes = [
       "grey",
       "aqua",
       "fuchsia",
-      "navy"
+      "navy",
     ],
   },
   {
@@ -46,7 +48,7 @@ export const clothes = [
       "blue",
       "grey",
       "fuchsia",
-      "navy"
+      "navy",
     ],
   },
   {
@@ -67,7 +69,7 @@ export const clothes = [
       "brown",
       "blue",
       "grey",
-      "navy"
+      "navy",
     ],
   },
   {
@@ -90,7 +92,7 @@ export const clothes = [
       "grey",
       "aqua",
       "fuchsia",
-      "navy"
+      "navy",
     ],
   },
   {
@@ -112,7 +114,7 @@ export const clothes = [
       "grey",
       "aqua",
       "fuchsia",
-      "navy"
+      "navy",
     ],
   },
   {
@@ -134,7 +136,7 @@ export const clothes = [
       "grey",
       "aqua",
       "fuchsia",
-      "navy"
+      "navy",
     ],
   },
   {
@@ -146,7 +148,7 @@ export const clothes = [
     price: "699.000",
     forMan: true,
     new: true,
-    percentDiscount: 15,
+    percentDiscount: 8,
     color: [
       "yellow",
       "green",
@@ -156,7 +158,7 @@ export const clothes = [
       "blue",
       "grey",
       "fuchsia",
-      "navy"
+      "navy",
     ],
   },
   {
@@ -200,7 +202,7 @@ export const clothes = [
       "blue",
       "grey",
       "fuchsia",
-      "navy"
+      "navy",
     ],
   },
   {
@@ -222,7 +224,7 @@ export const clothes = [
       "blue",
       "grey",
       "aqua",
-      "navy"
+      "navy",
     ],
   },
   {
@@ -244,7 +246,7 @@ export const clothes = [
       "grey",
       "aqua",
       "fuchsia",
-      "navy"
+      "navy",
     ],
   },
   {
@@ -256,7 +258,7 @@ export const clothes = [
     price: "199.000",
     forMan: false,
     new: true,
-    percentDiscount: 2,
+    percentDiscount: 0,
     color: [
       "yellow",
       "green",
@@ -267,7 +269,7 @@ export const clothes = [
       "grey",
       "aqua",
       "fuchsia",
-      "navy"
+      "navy",
     ],
   },
   {
@@ -290,7 +292,7 @@ export const clothes = [
       "grey",
       "aqua",
       "fuchsia",
-      "navy"
+      "navy",
     ],
   },
   {
@@ -303,15 +305,7 @@ export const clothes = [
     forMan: false,
     new: false,
     percentDiscount: 0,
-    color: [
-      "yellow",
-      "green",
-      "black",
-      "white",
-      "brown",
-      "grey",
-      "fuchsia"
-    ],
+    color: ["yellow", "green", "black", "white", "brown", "grey", "fuchsia"],
   },
   {
     id: 15,
@@ -323,14 +317,7 @@ export const clothes = [
     forMan: false,
     new: true,
     percentDiscount: 0,
-    color: [
-      "yellow",
-      "green",
-      "black",
-      "aqua",
-      "fuchsia",
-      "navy"
-    ],
+    color: ["yellow", "green", "black", "aqua", "fuchsia", "navy"],
   },
   {
     id: 16,
@@ -342,12 +329,7 @@ export const clothes = [
     forMan: false,
     new: true,
     percentDiscount: 0,
-    color: [
-      "yellow",
-      "green",
-      "black",
-      "white"
-    ],
+    color: ["yellow", "green", "black", "white"],
   },
   {
     id: 17,
@@ -368,7 +350,7 @@ export const clothes = [
       "blue",
       "grey",
       "aqua",
-      "fuchsia"
+      "fuchsia",
     ],
   },
   {
@@ -381,14 +363,7 @@ export const clothes = [
     forMan: false,
     new: true,
     percentDiscount: 10,
-    color: [
-      "yellow",
-      "green",
-      "black",
-      "white",
-      "fuchsia",
-      "navy"
-    ],
+    color: ["yellow", "green", "black", "white", "fuchsia", "navy"],
   },
   {
     id: 19,
@@ -400,10 +375,7 @@ export const clothes = [
     forMan: false,
     new: true,
     percentDiscount: 0,
-    color: [
-      "black",
-      "white"
-    ],
+    color: ["black", "white"],
   },
   {
     id: 20,

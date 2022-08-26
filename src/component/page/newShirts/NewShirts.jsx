@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import "./newShirts.css";
 import { newShirts } from "./data";
 import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/navigation";
+import 'swiper/swiper.min.css'
+import 'swiper/modules/pagination/pagination.min.css'
+import 'swiper/modules/navigation/navigation.min.css'
 import { Pagination, Autoplay, Navigation } from "swiper";
 
 export default function Slide() {

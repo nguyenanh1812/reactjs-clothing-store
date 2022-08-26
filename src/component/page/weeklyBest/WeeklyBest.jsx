@@ -1,17 +1,21 @@
 import React from "react";
 import "./weeklyBest.css";
 import { useState } from "react";
+import styled from "styled-components";
 // import {clothes} from '../data'
 
 export default function WeeklyBest({ clothes }) {
   const [man, setForMan] = useState(true);
 
+  const ContainerDiv = styled.div`
+    background: rgb(229 229 229);
+  `
   const genderChange = () => {
     setForMan(!man);
   };
   return (
     <>
-      <div style={{ background: "rgb(229 229 229)" }}>
+      <ContainerDiv>
         <div className="container-fluid">
           <div className="text-center mb-2">
             <div className="new-clothes__header">WEEKLY BEST</div>
@@ -129,7 +133,7 @@ export default function WeeklyBest({ clothes }) {
               )}
           </div>
         </div>
-      </div>
+      </ContainerDiv>
     </>
   );
 }
