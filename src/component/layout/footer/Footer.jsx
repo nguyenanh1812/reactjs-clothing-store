@@ -4,7 +4,7 @@ import styled from 'styled-components'
 
 const ContainerDiv = styled.div`
   margin: 0 5%;
-  padding: 3% 0;
+  padding: 3% 0 1% 0;
 `
 
 export default function Footer() {

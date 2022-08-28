@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./header.css";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
@@ -50,44 +50,58 @@ import Navbar from "react-bootstrap/Navbar";
 // }
 
 function Header() {
+  const [page, setPage] = useState()
+
+  const handleClick = (e) => {
+    setTimeout(
+      setPage(e), 10000
+    )
+  }
+
+  useEffect(()=> {
+    console.log('page',page);
+  },[page])
+
   return (
-    <Navbar bg="white" expand="lg" className="position-fixed" style={{minHeight: "50px"}}>
-      <Container>
-        <Navbar.Brand href="#home" className="m-0 p-0">
-          {/* <img
-            src="https://is2-ssl.mzstatic.com/image/thumb/Purple124/v4/98/4d/3f/984d3f69-b706-ec8b-e379-e2c5213894a3/source/512x512bb.jpg"
-            alt="logo"
-            className="img-logo"
-          /> */}
-          <i className="far fa-snowflake" style={{fontSize: '150%'}}></i>
-        </Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="me-auto mx-auto">
-            <Nav.Link className="nav-item" href="#home">
-              <span className="nav-link">TRANG CHỦ</span>
-            </Nav.Link>
-            <Nav.Link className="nav-item" href="#link1">
-              <span className="nav-link">SALE NỬA GIÁ</span>
-            </Nav.Link>
-            <Nav.Link className="nav-item" href="#link2">
-              <span className="nav-link">NAM</span>
-            </Nav.Link>
-            <Nav.Link className="nav-item" href="#link3">
-              <span className="nav-link">NỮ</span>
-            </Nav.Link>
-            <Nav.Link className="nav-item" href="#link4">
-              <span className="nav-link">HELIANTHUS</span>
-            </Nav.Link>
-          </Nav>
-          <div className="nav-icon">
-            <i className="fas fa-search"></i>
-            <i className="fas fa-shopping-bag"></i>
-            <i className="far fa-heart"></i>
-          </div>
-        </Navbar.Collapse>
-      </Container>
-    </Navbar>
+    <>
+      <Navbar
+        bg="white"
+        expand="lg"
+        className="position-fixed"
+        style={{ minHeight: "50px" }}
+      >
+        <Container>
+          <Navbar.Brand href="/" className="m-0 p-0" onClick={()=>handleClick('home')}>
+            <i className="far fa-snowflake" style={{ fontSize: "150%" }}></i>
+          </Navbar.Brand>
+          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          <Navbar.Collapse id="basic-navbar-nav">
+            <Nav className="me-auto mx-auto">
+              <Nav.Link className="nav-item" href="/home" onClick={()=>handleClick('home')}>
+                <span className="nav-link">TRANG CHỦ</span>
+              </Nav.Link>
+              <Nav.Link className={`nav-item ${page === 'sale' ? 'active' : ''}`} href="/sale" onClick={()=>handleClick('sale')}>
+                <span className="nav-link">SALE</span>
+              </Nav.Link>
+              <Nav.Link className="nav-item" href="/male" onClick={()=>handleClick('male')}>
+                <span className="nav-link">NAM</span>
+              </Nav.Link>
+              <Nav.Link className="nav-item" href="/female" onClick={()=>handleClick('female')}>
+                <span className="nav-link">NỮ</span>
+              </Nav.Link>
+              <Nav.Link className="nav-item" href="/up-to-49k" onClick={()=>handleClick('49k')}>
+                <span className="nav-link">ĐỒNG GIÁ TỪ 49K</span>
+              </Nav.Link>
+            </Nav>
+            <div className="nav-icon">
+              <i className="fas fa-search"></i>
+              <i className="fas fa-shopping-bag"></i>
+              <i className="far fa-heart"></i>
+            </div>
+          </Navbar.Collapse>
+        </Container>
+      </Navbar>
+    </>
   );
 }
 

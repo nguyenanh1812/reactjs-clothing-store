@@ -1,17 +1,16 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Carousel from "react-bootstrap/Carousel";
 import Api from "../../common/getapi/Api";
-import Footer from "../../layout/footer/Footer";
-import Header from "../../layout/header/Header";
-import NewShirts from "../newShirts/NewShirts";
-import WeeklyBest from "../weeklyBest/WeeklyBest";
+import NewShirts from "./newShirts/NewShirts";
+import WeeklyBest from "./weeklyBest/WeeklyBest";
 import "./home.css";
 
 export default function Home({ clothes }) {
+  useEffect(() => {
+    document.title = "Trang chủ";
+  }, []);
   return (
     <>
-      <Header />
-
       {/* ship */}
       <Carousel
         className="ship-price"
@@ -143,9 +142,8 @@ export default function Home({ clothes }) {
       {/* <!-- WEEKLY BEST --> */}
       <WeeklyBest clothes={clothes} />
 
-            <Api />
-      {/* footer */}
-      <Footer />
+      <Api />
+
     </>
   );
 }

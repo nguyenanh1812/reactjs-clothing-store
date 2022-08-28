@@ -2,10 +2,11 @@ import React, { useState } from "react";
 import "./newShirts.css";
 import { newShirts } from "./data";
 import { Swiper, SwiperSlide } from "swiper/react";
-import 'swiper/swiper.min.css'
-import 'swiper/modules/pagination/pagination.min.css'
-import 'swiper/modules/navigation/navigation.min.css'
+import "swiper/swiper.min.css";
+import "swiper/modules/pagination/pagination.min.css";
+import "swiper/modules/navigation/navigation.min.css";
 import { Pagination, Autoplay, Navigation } from "swiper";
+import { Link } from "react-router-dom";
 
 export default function Slide() {
   const [man, setForMan] = useState(true);
@@ -80,9 +81,11 @@ export default function Slide() {
             .map(
               (shirt) =>
                 shirt.forMan === man && (
-                  <SwiperSlide>
-                    <div key={shirt.id} className="item px-1">
-                      <img src={shirt.imgURL} alt="shirt img" />
+                  <SwiperSlide key={shirt.id}>
+                    <div className="item px-1">
+                      <Link to={`/products-${shirt.id}`}>
+                        <img src={shirt.imgURL} alt="shirt img" />
+                      </Link>
                       <h4 className="text-center mt-3">{shirt.name}</h4>
                       <p className="text-center">Giá: {shirt.price} đ</p>
                     </div>

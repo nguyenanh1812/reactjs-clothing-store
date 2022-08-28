@@ -1,5 +1,6 @@
 DEMO: https://sselegant-nguyenanh18.netlify.app/
 # Library
+npm i react-router-dom || npm install react-router-dom@6
 npm i swiper
 npm i react-bootstrap bootstrap
 npm i --save styled-components
