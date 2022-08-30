@@ -3,12 +3,8 @@ import React from "react";
 export default function ItemDetail({ item }) {
   return (
     <div className="container">
-      <div
-        key={item.id}
-        className="col-xxl-3 col-lg-4 col-md-6 my-1 home__product"
-        style={{ padding: "2%" }}
-      >
-        <div className="position-relative">
+      <div key={item.id} className="row" style={{ padding: "2%" }}>
+        <div className="position-relative col-md-6 p-0">
           <img src={item.imgURL} alt="product img" className="img-fluid" />
           <div
             className="position-absolute text-white text-center"
@@ -26,7 +22,7 @@ export default function ItemDetail({ item }) {
           </div>
         </div>
 
-        <div className="detail">
+        <div className="detail col-md-6 align-self-center">
           <div className="info mt-2">
             <div
               className="my-1"
@@ -56,6 +52,13 @@ export default function ItemDetail({ item }) {
               </span>
             </p>
             <p>+{item.color.length} màu</p>
+
+              {item.color.map((color, index) => (
+                <div key={index} className="mb-3">
+                 <input type="radio" id={`color-${color}`} name="color" value={color} />
+                  <label for={`color-${color}`}> {color}</label><br />
+                </div>
+              ))}
           </div>
         </div>
       </div>

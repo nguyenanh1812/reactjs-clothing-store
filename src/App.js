@@ -10,6 +10,8 @@ import Helianthus from "./component/page/helianthus/Helianthus";
 import Header from "./component/layout/header/Header";
 import Footer from "./component/layout/footer/Footer";
 import ItemDetail from "./component/common/clothingDetail/ItemDetail";
+import RegisterForm from "./component/common/form/RegisterForm";
+
 
 function App() {
   return (
@@ -22,6 +24,7 @@ function App() {
           <Route path="/male" element={<Male />} />
           <Route path="/female" element={<FeMale />} />
           <Route path="/up-to-49k" element={<Helianthus />} />
+          <Route path="/login" element={<RegisterForm />} />
           {clothes.map((item) => (
             <Route
               exact

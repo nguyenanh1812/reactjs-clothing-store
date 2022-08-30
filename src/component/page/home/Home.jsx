@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import Carousel from "react-bootstrap/Carousel";
-import Api from "../../common/getapi/Api";
+import Comment from "../../common/getapi/Comment";
 import NewShirts from "./newShirts/NewShirts";
 import WeeklyBest from "./weeklyBest/WeeklyBest";
 import "./home.css";
@@ -142,8 +142,7 @@ export default function Home({ clothes }) {
       {/* <!-- WEEKLY BEST --> */}
       <WeeklyBest clothes={clothes} />
 
-      <Api />
-
+      <Comment />
     </>
   );
 }
