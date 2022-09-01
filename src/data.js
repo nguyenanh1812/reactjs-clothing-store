@@ -28,6 +28,9 @@ export const clothes = [
       "fuchsia",
       "navy",
     ],
+    fabric: "Cotton lụa voan mịn, hình in độc1",
+    quantity: 30,
+    size: ["S", "M", "L"],
   },
   {
     id: 2,
@@ -50,6 +53,9 @@ export const clothes = [
       "fuchsia",
       "navy",
     ],
+    fabric: "Cotton lụa voan mịn, hình in độc1",
+    quantity: 30,
+    size: ["S", "M", "L"],
   },
   {
     id: 3,
@@ -71,6 +77,11 @@ export const clothes = [
       "grey",
       "navy",
     ],
+    fabric: "Cotton lụa voan mịn, hình in độc1",
+    quantity: 30,
+    size: ["S", "M", "L"],
+    description:
+      "Chất liệu: Cotton lụa voan mịn, hình in độc quyền LookbookFeastOfJungle QUY ĐỊNH ĐỔI TRẢ: <br/> - Đối với mặt hàng giảm giá, vui lòng không đổi trả. <br/>- Đối với hàng mới, shop chỉ nhận đổi các sản phẩm bị lỗi sản xuất còn nguyên tag chưa qua sử dụng trong vòng 3 ngày kể từ ngày nhận được hàng.<br/> - Nhận đổi trả size trong vòng 3 ngày kể từ ngày nhận hàng, phí ship đổi size quý khách vui lòng thanh toán 2 chiều.<br/> HƯỚNG DẪN CHỌN SIZE:<br/> - Size S: 1m65-1m72, 53kg-65kg <br/>- Size M: 1m73-1m78, 66kg-72kg <br/>- Size L: 1m80-1m85, 72kg-85kg",
   },
   {
     id: 4,
@@ -94,6 +105,11 @@ export const clothes = [
       "fuchsia",
       "navy",
     ],
+    fabric: "Cotton lụa voan mịn, hình in độc1",
+    quantity: 30,
+    size: ["S", "M", "L"],
+    description:
+      "Chất liệu: Cotton lụa voan mịn, hình in độc quyền LookbookFeastOfJungle QUY ĐỊNH ĐỔI TRẢ: <br/> - Đối với mặt hàng giảm giá, vui lòng không đổi trả. <br/>- Đối với hàng mới, shop chỉ nhận đổi các sản phẩm bị lỗi sản xuất còn nguyên tag chưa qua sử dụng trong vòng 3 ngày kể từ ngày nhận được hàng.<br/> - Nhận đổi trả size trong vòng 3 ngày kể từ ngày nhận hàng, phí ship đổi size quý khách vui lòng thanh toán 2 chiều.<br/> HƯỚNG DẪN CHỌN SIZE:<br/> - Size S: 1m65-1m72, 53kg-65kg <br/>- Size M: 1m73-1m78, 66kg-72kg <br/>- Size L: 1m80-1m85, 72kg-85kg",
   },
   {
     id: 5,
@@ -116,6 +132,11 @@ export const clothes = [
       "fuchsia",
       "navy",
     ],
+    fabric: "Cotton lụa voan mịn, hình in độc1",
+    quantity: 30,
+    size: ["S", "M", "L"],
+    description:
+      "Chất liệu: Cotton lụa voan mịn, hình in độc quyền LookbookFeastOfJungle QUY ĐỊNH ĐỔI TRẢ: <br/> - Đối với mặt hàng giảm giá, vui lòng không đổi trả. <br/>- Đối với hàng mới, shop chỉ nhận đổi các sản phẩm bị lỗi sản xuất còn nguyên tag chưa qua sử dụng trong vòng 3 ngày kể từ ngày nhận được hàng.<br/> - Nhận đổi trả size trong vòng 3 ngày kể từ ngày nhận hàng, phí ship đổi size quý khách vui lòng thanh toán 2 chiều.<br/> HƯỚNG DẪN CHỌN SIZE:<br/> - Size S: 1m65-1m72, 53kg-65kg <br/>- Size M: 1m73-1m78, 66kg-72kg <br/>- Size L: 1m80-1m85, 72kg-85kg",
   },
   {
     id: 6,
@@ -138,6 +159,11 @@ export const clothes = [
       "fuchsia",
       "navy",
     ],
+    fabric: "Cotton lụa voan mịn, hình in độc1",
+    quantity: 30,
+    size: ["S", "M", "L"],
+    description:
+      "Chất liệu: Cotton lụa voan mịn, hình in độc quyền LookbookFeastOfJungle QUY ĐỊNH ĐỔI TRẢ: <br/> - Đối với mặt hàng giảm giá, vui lòng không đổi trả. <br/>- Đối với hàng mới, shop chỉ nhận đổi các sản phẩm bị lỗi sản xuất còn nguyên tag chưa qua sử dụng trong vòng 3 ngày kể từ ngày nhận được hàng.<br/> - Nhận đổi trả size trong vòng 3 ngày kể từ ngày nhận hàng, phí ship đổi size quý khách vui lòng thanh toán 2 chiều.<br/> HƯỚNG DẪN CHỌN SIZE:<br/> - Size S: 1m65-1m72, 53kg-65kg <br/>- Size M: 1m73-1m78, 66kg-72kg <br/>- Size L: 1m80-1m85, 72kg-85kg",
   },
   {
     id: 7,
@@ -160,6 +186,11 @@ export const clothes = [
       "fuchsia",
       "navy",
     ],
+    fabric: "Cotton lụa voan mịn, hình in độc1",
+    quantity: 30,
+    size: ["S", "M", "L"],
+    description:
+      "Chất liệu: Cotton lụa voan mịn, hình in độc quyền LookbookFeastOfJungle QUY ĐỊNH ĐỔI TRẢ: <br/> - Đối với mặt hàng giảm giá, vui lòng không đổi trả. <br/>- Đối với hàng mới, shop chỉ nhận đổi các sản phẩm bị lỗi sản xuất còn nguyên tag chưa qua sử dụng trong vòng 3 ngày kể từ ngày nhận được hàng.<br/> - Nhận đổi trả size trong vòng 3 ngày kể từ ngày nhận hàng, phí ship đổi size quý khách vui lòng thanh toán 2 chiều.<br/> HƯỚNG DẪN CHỌN SIZE:<br/> - Size S: 1m65-1m72, 53kg-65kg <br/>- Size M: 1m73-1m78, 66kg-72kg <br/>- Size L: 1m80-1m85, 72kg-85kg",
   },
   {
     id: 8,
@@ -183,6 +214,11 @@ export const clothes = [
       "fuchsia",
       "navy",
     ],
+    fabric: "Cotton lụa voan mịn, hình in độc1",
+    quantity: 30,
+    size: ["S", "M", "L"],
+    description:
+      "Chất liệu: Cotton lụa voan mịn, hình in độc quyền LookbookFeastOfJungle QUY ĐỊNH ĐỔI TRẢ: <br/> - Đối với mặt hàng giảm giá, vui lòng không đổi trả. <br/>- Đối với hàng mới, shop chỉ nhận đổi các sản phẩm bị lỗi sản xuất còn nguyên tag chưa qua sử dụng trong vòng 3 ngày kể từ ngày nhận được hàng.<br/> - Nhận đổi trả size trong vòng 3 ngày kể từ ngày nhận hàng, phí ship đổi size quý khách vui lòng thanh toán 2 chiều.<br/> HƯỚNG DẪN CHỌN SIZE:<br/> - Size S: 1m65-1m72, 53kg-65kg <br/>- Size M: 1m73-1m78, 66kg-72kg <br/>- Size L: 1m80-1m85, 72kg-85kg",
   },
   {
     id: 9,
@@ -204,6 +240,11 @@ export const clothes = [
       "fuchsia",
       "navy",
     ],
+    fabric: "Cotton lụa voan mịn, hình in độc1",
+    quantity: 30,
+    size: ["S", "M", "L"],
+    description:
+      "Chất liệu: Cotton lụa voan mịn, hình in độc quyền LookbookFeastOfJungle QUY ĐỊNH ĐỔI TRẢ: <br/> - Đối với mặt hàng giảm giá, vui lòng không đổi trả. <br/>- Đối với hàng mới, shop chỉ nhận đổi các sản phẩm bị lỗi sản xuất còn nguyên tag chưa qua sử dụng trong vòng 3 ngày kể từ ngày nhận được hàng.<br/> - Nhận đổi trả size trong vòng 3 ngày kể từ ngày nhận hàng, phí ship đổi size quý khách vui lòng thanh toán 2 chiều.<br/> HƯỚNG DẪN CHỌN SIZE:<br/> - Size S: 1m65-1m72, 53kg-65kg <br/>- Size M: 1m73-1m78, 66kg-72kg <br/>- Size L: 1m80-1m85, 72kg-85kg",
   },
   {
     id: 10,
@@ -226,6 +267,11 @@ export const clothes = [
       "aqua",
       "navy",
     ],
+    fabric: "Cotton lụa voan mịn, hình in độc1",
+    quantity: 30,
+    size: ["S", "M", "L"],
+    description:
+      "Chất liệu: Cotton lụa voan mịn, hình in độc quyền LookbookFeastOfJungle QUY ĐỊNH ĐỔI TRẢ: <br/> - Đối với mặt hàng giảm giá, vui lòng không đổi trả. <br/>- Đối với hàng mới, shop chỉ nhận đổi các sản phẩm bị lỗi sản xuất còn nguyên tag chưa qua sử dụng trong vòng 3 ngày kể từ ngày nhận được hàng.<br/> - Nhận đổi trả size trong vòng 3 ngày kể từ ngày nhận hàng, phí ship đổi size quý khách vui lòng thanh toán 2 chiều.<br/> HƯỚNG DẪN CHỌN SIZE:<br/> - Size S: 1m65-1m72, 53kg-65kg <br/>- Size M: 1m73-1m78, 66kg-72kg <br/>- Size L: 1m80-1m85, 72kg-85kg",
   },
   {
     id: 11,
@@ -248,6 +294,11 @@ export const clothes = [
       "fuchsia",
       "navy",
     ],
+    fabric: "Cotton lụa voan mịn, hình in độc1",
+    quantity: 30,
+    size: ["S", "M", "L"],
+    description:
+      "Chất liệu: Cotton lụa voan mịn, hình in độc quyền LookbookFeastOfJungle QUY ĐỊNH ĐỔI TRẢ: <br/> - Đối với mặt hàng giảm giá, vui lòng không đổi trả. <br/>- Đối với hàng mới, shop chỉ nhận đổi các sản phẩm bị lỗi sản xuất còn nguyên tag chưa qua sử dụng trong vòng 3 ngày kể từ ngày nhận được hàng.<br/> - Nhận đổi trả size trong vòng 3 ngày kể từ ngày nhận hàng, phí ship đổi size quý khách vui lòng thanh toán 2 chiều.<br/> HƯỚNG DẪN CHỌN SIZE:<br/> - Size S: 1m65-1m72, 53kg-65kg <br/>- Size M: 1m73-1m78, 66kg-72kg <br/>- Size L: 1m80-1m85, 72kg-85kg",
   },
   {
     id: 12,
@@ -271,6 +322,11 @@ export const clothes = [
       "fuchsia",
       "navy",
     ],
+    fabric: "Cotton lụa voan mịn, hình in độc1",
+    quantity: 10,
+    size: ["S", "M", "L"],
+    description:
+      "Chất liệu: Cotton lụa voan mịn, hình in độc quyền LookbookFeastOfJungle QUY ĐỊNH ĐỔI TRẢ: <br/> - Đối với mặt hàng giảm giá, vui lòng không đổi trả. <br/>- Đối với hàng mới, shop chỉ nhận đổi các sản phẩm bị lỗi sản xuất còn nguyên tag chưa qua sử dụng trong vòng 3 ngày kể từ ngày nhận được hàng.<br/> - Nhận đổi trả size trong vòng 3 ngày kể từ ngày nhận hàng, phí ship đổi size quý khách vui lòng thanh toán 2 chiều.<br/> HƯỚNG DẪN CHỌN SIZE:<br/> - Size S: 1m65-1m72, 53kg-65kg <br/>- Size M: 1m73-1m78, 66kg-72kg <br/>- Size L: 1m80-1m85, 72kg-85kg",
   },
   {
     id: 13,
@@ -294,6 +350,11 @@ export const clothes = [
       "fuchsia",
       "navy",
     ],
+    fabric: "Cotton lụa voan mịn, hình in độc1",
+    quantity: 30,
+    size: ["S", "M", "L"],
+    description:
+      "Chất liệu: Cotton lụa voan mịn, hình in độc quyền LookbookFeastOfJungle QUY ĐỊNH ĐỔI TRẢ: <br/> - Đối với mặt hàng giảm giá, vui lòng không đổi trả. <br/>- Đối với hàng mới, shop chỉ nhận đổi các sản phẩm bị lỗi sản xuất còn nguyên tag chưa qua sử dụng trong vòng 3 ngày kể từ ngày nhận được hàng.<br/> - Nhận đổi trả size trong vòng 3 ngày kể từ ngày nhận hàng, phí ship đổi size quý khách vui lòng thanh toán 2 chiều.<br/> HƯỚNG DẪN CHỌN SIZE:<br/> - Size S: 1m65-1m72, 53kg-65kg <br/>- Size M: 1m73-1m78, 66kg-72kg <br/>- Size L: 1m80-1m85, 72kg-85kg",
   },
   {
     id: 14,
@@ -306,6 +367,11 @@ export const clothes = [
     new: false,
     percentDiscount: 0,
     color: ["yellow", "green", "black", "white", "brown", "grey", "fuchsia"],
+    fabric: "Cotton lụa voan mịn, hình in độc1",
+    quantity: 40,
+    size: ["S", "M", "L"],
+    description:
+      "Chất liệu: Cotton lụa voan mịn, hình in độc quyền LookbookFeastOfJungle QUY ĐỊNH ĐỔI TRẢ: <br/> - Đối với mặt hàng giảm giá, vui lòng không đổi trả. <br/>- Đối với hàng mới, shop chỉ nhận đổi các sản phẩm bị lỗi sản xuất còn nguyên tag chưa qua sử dụng trong vòng 3 ngày kể từ ngày nhận được hàng.<br/> - Nhận đổi trả size trong vòng 3 ngày kể từ ngày nhận hàng, phí ship đổi size quý khách vui lòng thanh toán 2 chiều.<br/> HƯỚNG DẪN CHỌN SIZE:<br/> - Size S: 1m65-1m72, 53kg-65kg <br/>- Size M: 1m73-1m78, 66kg-72kg <br/>- Size L: 1m80-1m85, 72kg-85kg",
   },
   {
     id: 15,
@@ -318,6 +384,11 @@ export const clothes = [
     new: true,
     percentDiscount: 0,
     color: ["yellow", "green", "black", "aqua", "fuchsia", "navy"],
+    fabric: "Cotton lụa voan mịn, hình in độc1",
+    quantity: 70,
+    size: ["S", "M", "L"],
+    description:
+      "Chất liệu: Cotton lụa voan mịn, hình in độc quyền LookbookFeastOfJungle QUY ĐỊNH ĐỔI TRẢ: <br/> - Đối với mặt hàng giảm giá, vui lòng không đổi trả. <br/>- Đối với hàng mới, shop chỉ nhận đổi các sản phẩm bị lỗi sản xuất còn nguyên tag chưa qua sử dụng trong vòng 3 ngày kể từ ngày nhận được hàng.<br/> - Nhận đổi trả size trong vòng 3 ngày kể từ ngày nhận hàng, phí ship đổi size quý khách vui lòng thanh toán 2 chiều.<br/> HƯỚNG DẪN CHỌN SIZE:<br/> - Size S: 1m65-1m72, 53kg-65kg <br/>- Size M: 1m73-1m78, 66kg-72kg <br/>- Size L: 1m80-1m85, 72kg-85kg",
   },
   {
     id: 16,
@@ -330,6 +401,11 @@ export const clothes = [
     new: true,
     percentDiscount: 0,
     color: ["yellow", "green", "black", "white"],
+    fabric: "Cotton lụa voan mịn, hình in độc1",
+    quantity: 10,
+    size: ["S", "M", "L"],
+    description:
+      "Chất liệu: Cotton lụa voan mịn, hình in độc quyền LookbookFeastOfJungle QUY ĐỊNH ĐỔI TRẢ: <br/> - Đối với mặt hàng giảm giá, vui lòng không đổi trả. <br/>- Đối với hàng mới, shop chỉ nhận đổi các sản phẩm bị lỗi sản xuất còn nguyên tag chưa qua sử dụng trong vòng 3 ngày kể từ ngày nhận được hàng.<br/> - Nhận đổi trả size trong vòng 3 ngày kể từ ngày nhận hàng, phí ship đổi size quý khách vui lòng thanh toán 2 chiều.<br/> HƯỚNG DẪN CHỌN SIZE:<br/> - Size S: 1m65-1m72, 53kg-65kg <br/>- Size M: 1m73-1m78, 66kg-72kg <br/>- Size L: 1m80-1m85, 72kg-85kg",
   },
   {
     id: 17,
@@ -352,6 +428,11 @@ export const clothes = [
       "aqua",
       "fuchsia",
     ],
+    fabric: "sss ???",
+    quantity: 20,
+    size: ["S", "M", "L"],
+    description:
+      "Chất liệu: Cotton lụa voan mịn, hình in độc quyền LookbookFeastOfJungle QUY ĐỊNH ĐỔI TRẢ: <br/> - Đối với mặt hàng giảm giá, vui lòng không đổi trả. <br/>- Đối với hàng mới, shop chỉ nhận đổi các sản phẩm bị lỗi sản xuất còn nguyên tag chưa qua sử dụng trong vòng 3 ngày kể từ ngày nhận được hàng.<br/> - Nhận đổi trả size trong vòng 3 ngày kể từ ngày nhận hàng, phí ship đổi size quý khách vui lòng thanh toán 2 chiều.<br/> HƯỚNG DẪN CHỌN SIZE:<br/> - Size S: 1m65-1m72, 53kg-65kg <br/>- Size M: 1m73-1m78, 66kg-72kg <br/>- Size L: 1m80-1m85, 72kg-85kg",
   },
   {
     id: 18,
@@ -364,6 +445,11 @@ export const clothes = [
     new: true,
     percentDiscount: 10,
     color: ["yellow", "green", "black", "white", "fuchsia", "navy"],
+    fabric: "test1",
+    quantity: 30,
+    size: ["S", "M", "L"],
+    description:
+      "Chất liệu: Cotton lụa voan mịn, hình in độc quyền LookbookFeastOfJungle QUY ĐỊNH ĐỔI TRẢ: <br/> - Đối với mặt hàng giảm giá, vui lòng không đổi trả. <br/>- Đối với hàng mới, shop chỉ nhận đổi các sản phẩm bị lỗi sản xuất còn nguyên tag chưa qua sử dụng trong vòng 3 ngày kể từ ngày nhận được hàng.<br/> - Nhận đổi trả size trong vòng 3 ngày kể từ ngày nhận hàng, phí ship đổi size quý khách vui lòng thanh toán 2 chiều.<br/> HƯỚNG DẪN CHỌN SIZE:<br/> - Size S: 1m65-1m72, 53kg-65kg <br/>- Size M: 1m73-1m78, 66kg-72kg <br/>- Size L: 1m80-1m85, 72kg-85kg",
   },
   {
     id: 19,
@@ -376,6 +462,11 @@ export const clothes = [
     new: true,
     percentDiscount: 0,
     color: ["black", "white"],
+    fabric: "Đẹp quá trời",
+    quantity: 5,
+    size: ["S", "M", "L"],
+    description:
+      "Chất liệu: Cotton lụa voan mịn, hình in độc quyền LookbookFeastOfJungle QUY ĐỊNH ĐỔI TRẢ: <br/> - Đối với mặt hàng giảm giá, vui lòng không đổi trả. <br/>- Đối với hàng mới, shop chỉ nhận đổi các sản phẩm bị lỗi sản xuất còn nguyên tag chưa qua sử dụng trong vòng 3 ngày kể từ ngày nhận được hàng.<br/> - Nhận đổi trả size trong vòng 3 ngày kể từ ngày nhận hàng, phí ship đổi size quý khách vui lòng thanh toán 2 chiều.<br/> HƯỚNG DẪN CHỌN SIZE:<br/> - Size S: 1m65-1m72, 53kg-65kg <br/>- Size M: 1m73-1m78, 66kg-72kg <br/>- Size L: 1m80-1m85, 72kg-85kg",
   },
   {
     id: 20,
@@ -388,6 +479,11 @@ export const clothes = [
     new: false,
     percentDiscount: 10,
     color: ["yellow", "green", "black", "white", "brown", "blue", "navy"],
+    fabric: "fabric hihi",
+    quantity: 9,
+    size: ["S", "M", "L"],
+    description:
+      "Chất liệu: Cotton lụa voan mịn, hình in độc quyền LookbookFeastOfJungle QUY ĐỊNH ĐỔI TRẢ: <br/> - Đối với mặt hàng giảm giá, vui lòng không đổi trả. <br/>- Đối với hàng mới, shop chỉ nhận đổi các sản phẩm bị lỗi sản xuất còn nguyên tag chưa qua sử dụng trong vòng 3 ngày kể từ ngày nhận được hàng.<br/> - Nhận đổi trả size trong vòng 3 ngày kể từ ngày nhận hàng, phí ship đổi size quý khách vui lòng thanh toán 2 chiều.<br/> HƯỚNG DẪN CHỌN SIZE:<br/> - Size S: 1m65-1m72, 53kg-65kg <br/>- Size M: 1m73-1m78, 66kg-72kg <br/>- Size L: 1m80-1m85, 72kg-85kg",
   },
   {
     id: 21,
@@ -400,5 +496,10 @@ export const clothes = [
     new: false,
     percentDiscount: 13,
     color: ["green", "black", "white", "brown"],
+    fabric: "Cotton lụa voan mịn, hình in độc1",
+    quantity: 0,
+    size: ["S", "M", "L"],
+    description:
+      "Chất liệu: Cotton lụa voan mịn, hình in độc quyền LookbookFeastOfJungle QUY ĐỊNH ĐỔI TRẢ: <br/> - Đối với mặt hàng giảm giá, vui lòng không đổi trả. <br/>- Đối với hàng mới, shop chỉ nhận đổi các sản phẩm bị lỗi sản xuất còn nguyên tag chưa qua sử dụng trong vòng 3 ngày kể từ ngày nhận được hàng.<br/> - Nhận đổi trả size trong vòng 3 ngày kể từ ngày nhận hàng, phí ship đổi size quý khách vui lòng thanh toán 2 chiều.<br/> HƯỚNG DẪN CHỌN SIZE:<br/> - Size S: 1m65-1m72, 53kg-65kg <br/>- Size M: 1m73-1m78, 66kg-72kg <br/>- Size L: 1m80-1m85, 72kg-85kg",
   },
 ];

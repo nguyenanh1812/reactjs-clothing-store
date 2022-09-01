@@ -30,7 +30,7 @@ function App() {
               exact
               key={item.id}
               path={`/products-${item.id}`}
-              element={<ItemDetail item={item} />}
+              element={<ItemDetail item={item} listItem={clothes} />}
             />
           ))}
         </Routes>

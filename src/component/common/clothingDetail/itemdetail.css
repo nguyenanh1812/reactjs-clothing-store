@@ -1,0 +1,114 @@
+/* color & size */
+.checked-input input[type="radio"] {
+  display: none;
+}
+.checked-input input[type="radio"]:checked + label span {
+  transform: scale(1.25);
+}
+.checked-input input[type="radio"]:checked + label .bg-color {
+  border: 2px solid rgb(148, 221, 126);
+  opacity: 0.9;
+}
+
+.checked-input label {
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+.checked-input label:hover span {
+  transform: scale(1.25);
+}
+.checked-input label span {
+  display: block;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.2s ease-in-out;
+}
+.checked-input label span.bg-yellow {
+  background: yellow;
+}
+.checked-input label span.bg-green {
+  background: green;
+}
+.checked-input label span.bg-brown {
+  background: brown;
+}
+.checked-input label span.bg-blue {
+  background: rgb(13, 13, 196);
+}
+.checked-input label span.bg-grey {
+  background: grey;
+}
+.checked-input label span.bg-aqua {
+  background: aqua;
+}
+.checked-input label span.bg-fuchsia {
+  background: fuchsia;
+}
+.checked-input label span.bg-navy {
+  background: navy;
+}
+.checked-input label span.bg-black {
+  background: black;
+}
+.checked-input label span.bg-white {
+  background: white;
+  border: 1px dashed red;
+}
+
+.checked-input .bg-size {
+  width: 50px;
+  height: 35px;
+  color: black;
+  padding: 5px;
+  border: 1px solid dimgray;
+  border-radius: 5px;
+}
+
+.checked-input input[type="radio"]:checked + label.bg-size,
+.checked-input input[type="radio"]:checked + label.bg-size span {
+  background-color: rgb(104, 27, 27);
+  color: white;
+  transform: scale(1);
+}
+
+/* quantity */
+.quantity button {
+  padding: 0;
+  margin: 0;
+  border-style: none;
+  touch-action: manipulation;
+  display: inline-block;
+  border: none;
+  background: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+.quantity .qty {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: start;
+  text-align: center;
+}
+.quantity .qty label {
+  flex: 1 0 100%;
+}
+.quantity .qty input {
+  margin: 0px 5px;
+  width: 7rem;
+  height: 3rem;
+  font-size: 1.3rem;
+  text-align: center;
+  border: 1px solid #575757;
+  border-radius: 5px;
+}
+.quantity .qty button {
+  width: 3rem;
+  height: 3rem;
+  color: #575757;
+  font-size: 2rem;
+  border: 1px solid #575757;
+}
+
