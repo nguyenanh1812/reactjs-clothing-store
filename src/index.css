@@ -19,3 +19,12 @@ code {
   text-decoration: none;
   box-sizing: border-box;
 }
+
+@media screen and (max-width: 768px) {
+  .mb-center {
+    justify-content: center;
+  }
+  .mb-center img {
+    max-width: 344px;
+  }
+}

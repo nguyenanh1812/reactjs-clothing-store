@@ -36,8 +36,8 @@ export const clothes = [
     id: 2,
     typeId: 1,
     imgURL:
-      "https://cdn.ssstutter.com/products/po0EUQXd52Ks47dT/062022/1656562214790.jpeg",
-    name: "Young Green",
+      "https://cdn.ssstutter.com/products/po0EUQXd52Ks47dT/092022/1662012551424.jpeg",
+    name: "Young Blue",
     price: "199.000",
     forMan: true,
     new: true,
@@ -61,7 +61,7 @@ export const clothes = [
     id: 3,
     typeId: 1,
     imgURL:
-      "https://cdn.ssstutter.com/products/po0EUQXd52Ks47dT/072022/1657880260092.jpeg",
+      "https://cdn.ssstutter.com/products/po0EUQXd52Ks47dT/082022/1660902938639.jpeg",
     name: "W Shirt",
     price: "399.000",
     forMan: true,
@@ -87,8 +87,8 @@ export const clothes = [
     id: 4,
     typeId: 1,
     imgURL:
-      "https://cdn.ssstutter.com/products/po0EUQXd52Ks47dT/082022/1659513986190.jpeg",
-    name: "Jack Lane Shirt",
+      "https://cdn.ssstutter.com/products/po0EUQXd52Ks47dT/062022/1655086022508.jpeg",
+    name: "Jack Lane Pant",
     price: "329.000",
     forMan: true,
     new: true,

@@ -14,7 +14,7 @@ export default function FeMale() {
         className="w-100"
       />
       <div className="text-center h2 pt-5">Siêu Sale</div>
-      <div className="d-flex flex-wrap" style={{ padding: "1%" }}>
+      <div className="d-flex flex-wrap mb-center" style={{ padding: "1%" }}>
         {clothes
           .filter((e) => e.percentDiscount)
           .sort((a, b) => b.percentDiscount - a.percentDiscount)

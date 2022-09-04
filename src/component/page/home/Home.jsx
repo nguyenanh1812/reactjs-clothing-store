@@ -102,7 +102,7 @@ export default function Home({ clothes }) {
             className="bg-for-him-her"
             style={{
               backgroundImage:
-                "url('https://image.uniqlo.com/UQ/ST3/vn/imagesgoods/448809/item/vngoods_62_448809.jpg?width=1600&impolicy=quality_75')",
+                "url('https://cdn.ssstutter.com/products/po0EUQXd52Ks47dT/062022/1655785603886.jpeg')",
             }}
           >
             <div className="text-center">FOR HER</div>
@@ -111,7 +111,7 @@ export default function Home({ clothes }) {
       </div>
 
       {/* <!-- show slide new Clothes --> */}
-      <NewShirts />
+      <NewShirts newShirts={clothes} />
 
       <div style={{ margin: "3% 0" }}>
         <Carousel interval={6000} indicators={false} slide={true}>

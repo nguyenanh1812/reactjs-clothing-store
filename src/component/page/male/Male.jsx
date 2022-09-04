@@ -8,10 +8,10 @@ export default function FeMale() {
   }, []);
   return (
     <>
-      <div className="text-center h2 pt-5">FeMale</div>
-      <div className="d-flex flex-wrap" style={{ padding: "1%" }}>
+      <div className="text-center h2 pt-5">Male</div>
+      <div className="d-flex flex-wrap mb-center" style={{ padding: "1%" }}>
         {clothes
-          .filter((e) => !e.forMan)
+          .filter((e) => e.forMan)
           .map((item) => (
             <div
               key={item.id}

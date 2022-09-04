@@ -58,7 +58,7 @@ export default function FeMale() {
       </Carousel>
 
       <div className="text-center h2 pt-5">ĐỒNG GIÁ TỪ 49K</div>
-      <div className="d-flex flex-wrap" style={{ padding: "1%" }}>
+      <div className="d-flex flex-wrap mb-center" style={{ padding: "1%" }}>
         {clothes.map((item) => (
           <div
             key={item.id}

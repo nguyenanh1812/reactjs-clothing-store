@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import "./newShirts.css";
-import { newShirts } from "./data";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper.min.css";
 import "swiper/modules/pagination/pagination.min.css";
@@ -8,7 +7,7 @@ import "swiper/modules/navigation/navigation.min.css";
 import { Pagination, Autoplay, Navigation } from "swiper";
 import { Link } from "react-router-dom";
 
-export default function Slide() {
+export default function Slide({newShirts}) {
   const [man, setForMan] = useState(true);
 
   const genderChange = () => {
@@ -62,15 +61,15 @@ export default function Slide() {
           breakpoints={{
             586: {
               slidesPerView: 2,
-              spaceBetween: 20,
+              spaceBetween: 10,
             },
             1024: {
               slidesPerView: 4,
-              spaceBetween: 30,
+              spaceBetween: 20,
             },
             1440: {
               slidesPerView: 5,
-              spaceBetween: 40,
+              spaceBetween: 30,
             },
           }}
           modules={[Pagination, Autoplay, Navigation]}
