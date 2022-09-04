@@ -229,7 +229,7 @@ export default function ItemDetail({ item, listItem }) {
                   <a
                     href="https://www.facebook.com/"
                     target="_blank"
-                    rel="noreferrer"
+                    rel="noopener noreferrer"
                     className="text-black"
                   >
                     <i className="fa-brands fa-facebook-f"></i>
@@ -237,7 +237,7 @@ export default function ItemDetail({ item, listItem }) {
                   <a
                     href="https://www.google.com/intl/vi/gmail/about/"
                     target="_blank"
-                    rel="noreferrer"
+                    rel="noopener noreferrer"
                     className="text-black"
                   >
                     <i className="fa-brands fa-google"></i>
@@ -245,7 +245,7 @@ export default function ItemDetail({ item, listItem }) {
                   <a
                     href="https://twitter.com/?lang=vi"
                     target="_blank"
-                    rel="noreferrer"
+                    rel="noopener noreferrer"
                     className="text-black"
                   >
                     {" "}
@@ -254,7 +254,7 @@ export default function ItemDetail({ item, listItem }) {
                   <a
                     href="https://www.pinterest.com/"
                     target="_blank"
-                    rel="noreferrer"
+                    rel="noopener noreferrer"
                     className="text-black"
                   >
                     <i className="fa-solid fa-frog"></i>
@@ -262,7 +262,7 @@ export default function ItemDetail({ item, listItem }) {
                   <a
                     href="https://www.skype.com/en/"
                     target="_blank"
-                    rel="noreferrer"
+                    rel="noopener noreferrer"
                     className="text-black"
                   >
                     <i className="fa-brands fa-skype"></i>
