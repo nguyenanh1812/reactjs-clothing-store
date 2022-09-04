@@ -9,11 +9,12 @@ export default function ItemDetail({ item, listItem }) {
 
   const handleSelectColor = (event) => {
     setColor(event.target.value);
-    // console.log(color);
+    console.log(color);
   };
 
   const handleSelectSize = (event) => {
     setSize(event.target.value);
+    console.log(size)
   };
 
   const handleChangeQuantity = (event) => {
