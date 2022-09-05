@@ -12,19 +12,18 @@ import Footer from "./component/layout/footer/Footer";
 import ItemDetail from "./component/common/clothingDetail/ItemDetail";
 import RegisterForm from "./component/common/form/RegisterForm";
 
-
 function App() {
   return (
     <>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Home clothes={clothes} />} />
-          <Route path="/home" element={<Home clothes={clothes} />} />
-          <Route path="/sale" element={<Sale />} />
-          <Route path="/male" element={<Male />} />
-          <Route path="/female" element={<FeMale />} />
-          <Route path="/up-to-49k" element={<Helianthus />} />
-          <Route path="/login" element={<RegisterForm />} />
+          <Route path='/' element={<Home clothes={clothes} />} />
+          <Route path='/home' element={<Home clothes={clothes} />} />
+          <Route path='/sale' element={<Sale />} />
+          <Route path='/male' element={<Male />} />
+          <Route path='/female' element={<FeMale />} />
+          <Route path='/up-to-49k' element={<Helianthus />} />
+          <Route path='/login' element={<RegisterForm />} />
           {clothes.map((item) => (
             <Route
               exact
@@ -34,10 +33,10 @@ function App() {
             />
           ))}
         </Routes>
+        <Header />
+        <Footer />
+        <BackToTop />
       </BrowserRouter>
-      <Header />
-      <Footer />
-      <BackToTop />
     </>
   );
 }
