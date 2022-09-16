@@ -69,13 +69,13 @@ export default function Comments() {
                       Áo tốt đấy lần sau mua tiếp!
                     </p>
                     <div className="tools_comment">
-                      <a className="like" href="#" rel="noopener noreferrer">
+                      <div className="like"  >
                         Like
-                      </a>
+                      </div>
                       <span aria-hidden="true"> · </span>
-                      <a className="replay" href="#" rel="noopener noreferrer">
+                      <div className="replay"  >
                         Reply
-                      </a>
+                      </div>
                       <span aria-hidden="true"> · </span>
                       <i className="fa fa-thumbs-o-up"></i>
                       <span className="count">3</span>
@@ -96,13 +96,13 @@ export default function Comments() {
                             Tốt cái gì đắt quá mà xấu :)
                           </p>
                           <div className="tools_comment">
-                            <a className="like" href="#" rel="noopener noreferrer">
+                            <div className="like"  >
                               Like
-                            </a>
+                            </div>
                             <span aria-hidden="true"> · </span>
-                            <a className="replay" href="#" rel="noopener noreferrer">
+                            <div className="replay"  >
                               Reply
-                            </a>
+                            </div>
                             <span aria-hidden="true"> · </span>
                             <i className="fa fa-thumbs-o-up"></i>{" "}
                             <span className="count">7</span>
@@ -127,13 +127,13 @@ export default function Comments() {
                     <h4>Tuấn Anh đi ăn</h4>
                     <p>Đang có 2 voucher áp vào giá rẻ quá nè!</p>
                     <div className="tools_comment">
-                      <a className="like" href="#" rel="noopener noreferrer">
+                      <div className="like"  >
                         Like
-                      </a>
+                      </div>
                       <span aria-hidden="true"> · </span>
-                      <a className="replay" href="#" rel="noopener noreferrer">
+                      <div className="replay"  >
                         Reply
-                      </a>
+                      </div>
                       <span aria-hidden="true"> · </span>
                       <i className="fa fa-thumbs-o-up"></i>{" "}
                       <span className="count">11</span>
@@ -154,13 +154,13 @@ export default function Comments() {
                             Nếu được thì cho cái voucher đi!!
                           </p>
                           <div className="tools_comment">
-                            <a className="like" href="#" rel="noopener noreferrer">
+                            <div className="like"  >
                               Like
-                            </a>
+                            </div>
                             <span aria-hidden="true"> · </span>
-                            <a className="replay" href="#" rel="noopener noreferrer">
+                            <div className="replay"  >
                               Reply
-                            </a>
+                            </div>
                             <span aria-hidden="true"> · </span>
                             <i className="fa fa-thumbs-o-up"></i>{" "}
                             <span className="count">1</span>
@@ -186,13 +186,13 @@ export default function Comments() {
                     i really hate it. Tệ!!!
                     </p>
                     <div className="tools_comment">
-                      <a className="like" href="#" rel="noopener noreferrer">
+                      <div className="like"  >
                         Like
-                      </a>
+                      </div>
                       <span aria-hidden="true"> · </span>
-                      <a className="replay" href="#" rel="noopener noreferrer">
+                      <div className="replay" >
                         Reply
-                      </a>
+                      </div>
                       <span aria-hidden="true"> · </span>
                       <i className="fa fa-thumbs-o-up"></i>{" "}
                       <span className="count">4</span>
