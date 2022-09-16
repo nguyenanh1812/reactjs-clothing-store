@@ -95,7 +95,7 @@ function Header() {
             </Nav>
             <div className="nav-icon">
               <i className="fas fa-search"></i>
-              <i className="fas fa-shopping-bag"></i>
+              <Nav.Link href="/cart" className="d-inline p-0 m-0"><i className="fas fa-shopping-bag"></i></Nav.Link>
               <i className="far fa-heart"></i>
               <Nav.Link href="/login" className="d-inline p-0 m-0"><i className="far fa-user"></i></Nav.Link>
             </div>

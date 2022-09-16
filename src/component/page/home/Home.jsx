@@ -4,6 +4,7 @@ import Comment from "../../common/getapi/Comment";
 import NewShirts from "./newShirts/NewShirts";
 import WeeklyBest from "./weeklyBest/WeeklyBest";
 import "./home.css";
+import { Link } from "react-router-dom";
 
 export default function Home({ clothes }) {
   useEffect(() => {
@@ -87,26 +88,30 @@ export default function Home({ clothes }) {
       {/* <!-- for him & for her --> */}
       <div className="row row-responsive">
         <div className="col-sm-6">
-          <div
-            className="bg-for-him-her"
-            style={{
-              backgroundImage:
-                "url('https://image.uniqlo.com/UQ/ST3/vn/imagesgoods/448364/item/vngoods_62_448364.jpg?width=1600&impolicy=quality_75')",
-            }}
-          >
-            <div className="text-center">FOR HIM</div>
-          </div>
+          <Link to={"/male"} style={{ textDecoration: "none" }}>
+            <div
+              className="bg-for-him-her"
+              style={{
+                backgroundImage:
+                  "url('https://image.uniqlo.com/UQ/ST3/vn/imagesgoods/448364/item/vngoods_62_448364.jpg?width=1600&impolicy=quality_75')",
+              }}
+            >
+              <div className="text-center">FOR HIM</div>
+            </div>
+          </Link>
         </div>
         <div className="col-sm-6">
-          <div
-            className="bg-for-him-her"
-            style={{
-              backgroundImage:
-                "url('https://cdn.ssstutter.com/products/po0EUQXd52Ks47dT/062022/1655785603886.jpeg')",
-            }}
-          >
-            <div className="text-center">FOR HER</div>
-          </div>
+          <Link to={"/female"} style={{ textDecoration: "none" }}>
+            <div
+              className="bg-for-him-her"
+              style={{
+                backgroundImage:
+                  "url('https://cdn.ssstutter.com/products/po0EUQXd52Ks47dT/062022/1655785603886.jpeg')",
+              }}
+            >
+              <div className="text-center">FOR HER</div>
+            </div>
+          </Link>
         </div>
       </div>
 

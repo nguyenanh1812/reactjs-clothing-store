@@ -11,11 +11,13 @@ import Header from "./component/layout/header/Header";
 import Footer from "./component/layout/footer/Footer";
 import ItemDetail from "./component/common/clothingDetail/ItemDetail";
 import RegisterForm from "./component/common/form/RegisterForm";
+import ShoppingCart from "./component/common/cart/ShoppingCart";
 
 
 function App() {
   return (
     <>
+      <Header />
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home clothes={clothes} />} />
@@ -25,6 +27,7 @@ function App() {
           <Route path="/female" element={<FeMale />} />
           <Route path="/up-to-49k" element={<Helianthus />} />
           <Route path="/login" element={<RegisterForm />} />
+          <Route path="/cart" element={<ShoppingCart />} />
           {clothes.map((item) => (
             <Route
               exact
@@ -35,7 +38,6 @@ function App() {
           ))}
         </Routes>
       </BrowserRouter>
-      <Header />
       <Footer />
       <BackToTop />
     </>

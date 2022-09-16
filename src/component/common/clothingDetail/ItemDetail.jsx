@@ -1,4 +1,6 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import Comments from "./Comments";
+// import Comment from "../getapi/Comment";
 import "./itemdetail.css";
 import SimilarItem from "./SimilarItem";
 
@@ -6,6 +8,11 @@ export default function ItemDetail({ item, listItem }) {
   const [color, setColor] = useState("");
   const [size, setSize] = useState("S");
   const [quantity, setQuantity] = useState(1);
+  const [comment, setComment] = useState(false);
+
+  useEffect(() => {
+    document.title = item.name;
+  }, []);
 
   const handleSelectColor = (event) => {
     setColor(event.target.value);
@@ -14,7 +21,7 @@ export default function ItemDetail({ item, listItem }) {
 
   const handleSelectSize = (event) => {
     setSize(event.target.value);
-    console.log(size)
+    console.log(size);
   };
 
   const handleChangeQuantity = (event) => {
@@ -89,7 +96,6 @@ export default function ItemDetail({ item, listItem }) {
                 style={{ color: "black", fontWeight: "500" }}
               >
                 <i className="fa-solid fa-tag">
-                  {" "}
                   {(
                     item.price -
                     (item.percentDiscount * item.price) / 100
@@ -156,7 +162,7 @@ export default function ItemDetail({ item, listItem }) {
                   <div
                     className="checked-input ps-1"
                     key={index}
-                    onChange={handleSelectColor}
+                    onClick={handleSelectColor}
                   >
                     <input
                       type="radio"
@@ -248,7 +254,6 @@ export default function ItemDetail({ item, listItem }) {
                     rel="noopener noreferrer"
                     className="text-black"
                   >
-                    {" "}
                     <i className="fa-brands fa-twitter"></i>
                   </a>
                   <a
@@ -278,28 +283,42 @@ export default function ItemDetail({ item, listItem }) {
             style={{ gap: "5%", borderBottom: "1px solid lightgray" }}
           >
             <span
-              style={{ borderBottom: "2px solid black", cursor: "pointer" }}
+              style={{ cursor: "pointer" }}
+              onClick={() => setComment(false)}
+              className={!comment ? "border-b-2px" : ""}
             >
               Mô tả sản phẩm
-            </span>{" "}
-            <span style={{ cursor: "pointer" }}>Bình luận</span>
+            </span>
+            <span
+              style={{ cursor: "pointer" }}
+              onClick={() => setComment(true)}
+              className={comment ? "border-b-2px" : ""}
+            >
+              Bình luận
+            </span>
           </div>
-          <p>Chất liệu: {item.fabric}</p>
-          <p>QUY ĐỊNH ĐỔI TRẢ: </p>
-          <p>- Đối với mặt hàng giảm giá, vui lòng không đổi trả. </p>
-          <p>
-            - Đối với hàng mới, shop chỉ nhận đổi các sản phẩm bị lỗi sản xuất
-            còn nguyên tag chưa qua sử dụng trong vòng 3 ngày kể từ ngày nhận
-            được hàng.
-          </p>
-          <p>
-            - Nhận đổi trả size trong vòng 3 ngày kể từ ngày nhận hàng, phí ship
-            đổi size quý khách vui lòng thanh toán 2 chiều.
-          </p>
-          <p>HƯỚNG DẪN CHỌN SIZE: </p>
-          <p>- Size S: 1m65-1m72, 53kg-65kg </p>
-          <p>- Size M: 1m73-1m78, 66kg-72kg </p>
-          <p>- Size L: 1m80-1m85, 72kg-85kg</p>
+          {!comment ? (
+            <>
+              <p>Chất liệu: {item.fabric}</p>
+              <p>QUY ĐỊNH ĐỔI TRẢ: </p>
+              <p>- Đối với mặt hàng giảm giá, vui lòng không đổi trả. </p>
+              <p>
+                - Đối với hàng mới, shop chỉ nhận đổi các sản phẩm bị lỗi sản
+                xuất còn nguyên tag chưa qua sử dụng trong vòng 3 ngày kể từ
+                ngày nhận được hàng.
+              </p>
+              <p>
+                - Nhận đổi trả size trong vòng 3 ngày kể từ ngày nhận hàng, phí
+                ship đổi size quý khách vui lòng thanh toán 2 chiều.
+              </p>
+              <p>HƯỚNG DẪN CHỌN SIZE: </p>
+              <p>- Size S: 1m65-1m72, 53kg-65kg </p>
+              <p>- Size M: 1m73-1m78, 66kg-72kg </p>
+              <p>- Size L: 1m80-1m85, 72kg-85kg</p>
+            </>
+          ) : (
+            <Comments />
+          )}
         </div>
         <div className="row">
           <SimilarItem item={item} listItem={listItem} />
