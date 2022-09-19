@@ -79,14 +79,14 @@ export default function ItemDetail({ item, listItem }) {
         total: item.price * quantity,
       },
     ]);
-  };
-
-  useEffect(() => {
-    localStorage.setItem("clothingKey", JSON.stringify(cart));
     setAlertSuccess(true);
     setTimeout(()=> {
       setAlertSuccess(false)
     }, 3000);
+  };
+
+  useEffect(() => {
+    localStorage.setItem("clothingKey", JSON.stringify(cart));
   }, [cart]);
 
   return (
