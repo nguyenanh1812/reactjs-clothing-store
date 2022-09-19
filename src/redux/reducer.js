@@ -1,3 +1,5 @@
+// import { useEffect, useState } from "react";
+
 const initState = {
   orderList: [
     {
@@ -40,16 +42,25 @@ const initState = {
     },
   ],
 };
+
+// useEffect(()=> {
+//   const storageClothes = localStorage.getItem("clothingKey")
+//   if (storageClothes) {
+//     JSON.parse(storageClothes)
+//     console.log('localStorage', JSON.parse(storageClothes))
+//   }
+// }, [initState])
+
 const rootReducer = (state = initState, action) => {
   console.log(state, action);
   switch (action.type) {
-    case "orderList/addRecipe":
+    case "orderList/addOrderList":
       return {
         ...state,
-        recipeList: [...state.orderList, action.payload],
+        orderList: [...state.orderList, action.payload],
       };
 
-    case "orderList/updateRecipe":
+    case "orderList/updateOrderList":
       const orderList = [...state.orderList];
       const index = orderList.findIndex(
         (order) => order.id === action.payload.id
@@ -57,7 +68,7 @@ const rootReducer = (state = initState, action) => {
       orderList[index] = action.payload;
       return { ...state, orderList: orderList };
 
-    case "orderList/removeRecipe":
+    case "orderList/removeOrderList":
       const orderList1 = [...state.orderItem];
       const removeOrder = orderList.findIndex(
         (order) => order.id === action.payload.id

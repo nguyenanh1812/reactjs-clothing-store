@@ -1,14 +1,23 @@
 import React, { useEffect, useState } from "react";
+import Alerts from "./Alerts";
+// import { useDispatch, useSelector } from "react-redux";
+// import { addOrderList } from "../../../redux/actions";
+// import { orderListSelector } from "../../../redux/selectors";
 import Comments from "./Comments";
 // import Comment from "../getapi/Comment";
 import "./itemdetail.css";
 import SimilarItem from "./SimilarItem";
 
+const cartStorage = JSON.parse(localStorage.getItem("clothingKey") || "[]");
 export default function ItemDetail({ item, listItem }) {
+  // const orderList = useSelector(orderListSelector);
   const [color, setColor] = useState("");
   const [size, setSize] = useState("S");
   const [quantity, setQuantity] = useState(1);
   const [comment, setComment] = useState(false);
+  const [cart, setCart] = useState(cartStorage);
+  const [alertSuccess, setAlertSuccess] = useState(false);
+  // const dispatch = useDispatch();
 
   useEffect(() => {
     document.title = item.name;
@@ -50,280 +59,323 @@ export default function ItemDetail({ item, listItem }) {
     setQuantity((pre) => pre + 1);
   };
 
+  const addOrder = () => {
+    // dispatch(
+    //   addOrderList({
+    //     id: 10,
+    //     name: item.name,
+    //     price: item.price,
+    //     quantity: quantity,
+    //     total: item.price * quantity,
+    //   })
+    // );
+    setCart([
+      ...cart,
+      {
+        id: cart.length + 1,
+        name: item.name,
+        price: item.price,
+        quantity: quantity,
+        total: item.price * quantity,
+      },
+    ]);
+  };
+
+  useEffect(() => {
+    localStorage.setItem("clothingKey", JSON.stringify(cart));
+    setAlertSuccess(true);
+    setTimeout(()=> {
+      setAlertSuccess(false)
+    }, 3000);
+  }, [cart]);
+
   return (
-    <div style={{ background: "#fbfbfb" }}>
-      <div className="container">
-        <div className="row" style={{ padding: "2%" }}>
-          <div className="position-relative col-md-6 p-0">
-            <img
-              src={item.imgURL}
-              alt="product img"
-              className="img-fluid h-100"
-            />
-            <div
-              className="position-absolute text-white text-center"
-              style={{
-                background: "#9d2b2b",
-                top: "0",
-                right: "0",
-                padding: "10px 0",
-                width: "60px",
-                fontWeight: "550",
-                fontSize: "16px",
-              }}
-            >
-              {item.percentDiscount}%
-            </div>
-          </div>
-
-          <div className="detail col-md-6">
-            <div className="info">
+    <>
+      {alertSuccess && 
+        <Alerts setAlertSuccess={setAlertSuccess} name={item.name}/>
+      }
+      <div style={{ background: "#fbfbfb" }}>
+        <div className="container">
+          <div className="row" style={{ padding: "2%" }}>
+            <div className="position-relative col-md-6 p-0">
+              <img
+                src={item.imgURL}
+                alt="product img"
+                className="img-fluid h-100"
+              />
               <div
-                className="py-2 d-inline pe-3"
+                className="position-absolute text-white text-center"
                 style={{
-                  textDecoration: "none",
-                  color: "black",
+                  background: "#9d2b2b",
+                  top: "0",
+                  right: "0",
+                  padding: "10px 0",
+                  width: "60px",
                   fontWeight: "550",
-                  borderBottom: "1px solid black",
-                  fontSize: "40px",
-                }}
-              >
-                {item.name}
-              </div>
-
-              <p
-                className="mb-0 h2 py-3"
-                style={{ color: "black", fontWeight: "500" }}
-              >
-                <i className="fa-solid fa-tag">
-                  {(
-                    item.price -
-                    (item.percentDiscount * item.price) / 100
-                  ).toFixed(3)}
-                  <span className="currency-symbol">₫</span>
-                </i>
-                <span
-                  style={{
-                    color: "#919191",
-                    marginLeft: "6%",
-                    fontSize: "70%",
-                  }}
-                  className="text-decoration-line-through"
-                >
-                  {item.price}
-                  <span className="currency-symbol">₫</span>
-                </span>
-              </p>
-              <div
-                style={{
-                  marginTop: "5px",
-                  padding: "5px 8px",
-                  width: "100%",
-                  background: "#E9F7FA ",
-                  borderTop: "3px #24C3FD solid",
-                }}
-              >
-                <i className="fa-solid fa-qrcode"></i>
-                <span
-                  className="ps-2"
-                  style={{ fontWeight: "550", opacity: "0.9" }}
-                >
-                  Giảm 30K cho SP từ 100K khi thanh toán qua VNPay
-                </span>
-              </div>
-              <div
-                className="mb-3"
-                style={{
-                  fontWeight: "550",
-                  color: "dimgray",
                   fontSize: "16px",
-                  fontFamily: "arial",
                 }}
               >
-                <div className="mt-2">
-                  Trạng Thái:{" "}
-                  {item.quantity
-                    ? `Còn Hàng ${item.quantity} sản phẩm`
-                    : "Hết Hàng"}
+                {item.percentDiscount}%
+              </div>
+            </div>
+
+            <div className="detail col-md-6">
+              <div className="info">
+                <div
+                  className="py-2 d-inline pe-3"
+                  style={{
+                    textDecoration: "none",
+                    color: "black",
+                    fontWeight: "550",
+                    borderBottom: "1px solid black",
+                    fontSize: "40px",
+                  }}
+                >
+                  {item.name}
                 </div>
 
-                <div>Chất liệu: {item.fabric}</div>
-                <div>
-                  QUY ĐỊNH ĐỔI TRẢ: <br />
-                  - Đối với mặt hàng giảm giá, vui lòng không đổi trả. <br />-
-                  Đối với hàng mới, shop chỉ nhận đổi các sản phẩm bị lỗi sản
-                  xuất còn nguyên tag chưa qua sử dụng trong vòng 3 ngày...
-                </div>
-              </div>
-              <hr />
-              <p className="d-flex h5 flex-wrap pt-2">
-                {item.color.length} màu:
-                {item.color.map((color, index) => (
-                  <div
-                    className="checked-input ps-1"
-                    key={index}
-                    onClick={handleSelectColor}
-                  >
-                    <input
-                      type="radio"
-                      name="color"
-                      id={`radio-${color}`}
-                      value={color}
-                    />
-                    <label htmlFor={`radio-${color}`}>
-                      <span className={`bg-${color} bg-color`}></span>
-                    </label>
-                  </div>
-                ))}
-              </p>
-              <p className="d-flex h5 flex-wrap mt-3 align-items-center">
-                Kích cỡ:
-                {item.size.map((size, index) => (
-                  <div
-                    className="checked-input ps-1"
-                    key={index}
-                    onChange={handleSelectSize}
-                  >
-                    <input
-                      type="radio"
-                      name="size"
-                      id={`radio-${size}`}
-                      value={size}
-                    />
-                    <label htmlFor={`radio-${size}`} className="bg-size">
-                      <span className="text-center">{size}</span>
-                    </label>
-                  </div>
-                ))}
-              </p>
-              <div className="my-3 quantity pb-2">
-                <p className="h5 my-2 mt-3">Số lượng</p>
-                <p className="qty">
-                  <button
-                    className="quantity-minus"
-                    aria-hidden="true"
-                    onClick={minsQuantity}
-                  >
-                    <i className="fa-solid fa-minus"></i>
-                  </button>
-                  <input
-                    type="number"
-                    name="qty"
-                    id="qty"
-                    value={quantity}
-                    onChange={handleChangeQuantity}
-                  />
-                  <button
-                    className="quantity-plus"
-                    aria-hidden="true"
-                    onClick={plusQuantity}
-                  >
-                    <i className="fa-solid fa-plus"></i>
-                  </button>
-                </p>
-              </div>
-              <hr />
-              <div style={{ fontSize: "17px", fontWeight: "550" }}>
-                <p>
-                  Mã sản phẩm: P0{item.id}T{item.typeId}
-                </p>
                 <p
-                  className="d-flex justify-content-start align-items-center"
-                  style={{ gap: "5%", cursor: "pointer" }}
+                  className="mb-0 h2 py-3"
+                  style={{ color: "black", fontWeight: "500" }}
                 >
-                  Chia sẻ:
-                  <a
-                    href="https://www.facebook.com/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-black"
+                  <i className="fa-solid fa-tag">
+                    {(
+                      item.price -
+                      (item.percentDiscount * item.price) / 100
+                    ).toFixed(3)}
+                    <span className="currency-symbol">₫</span>
+                  </i>
+                  <span
+                    style={{
+                      color: "#919191",
+                      marginLeft: "6%",
+                      fontSize: "70%",
+                    }}
+                    className="text-decoration-line-through"
                   >
-                    <i className="fa-brands fa-facebook-f"></i>
-                  </a>
-                  <a
-                    href="https://www.google.com/intl/vi/gmail/about/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-black"
-                  >
-                    <i className="fa-brands fa-google"></i>
-                  </a>
-                  <a
-                    href="https://twitter.com/?lang=vi"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-black"
-                  >
-                    <i className="fa-brands fa-twitter"></i>
-                  </a>
-                  <a
-                    href="https://www.pinterest.com/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-black"
-                  >
-                    <i className="fa-solid fa-frog"></i>
-                  </a>
-                  <a
-                    href="https://www.skype.com/en/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-black"
-                  >
-                    <i className="fa-brands fa-skype"></i>
-                  </a>
+                    {item.price}
+                    <span className="currency-symbol">₫</span>
+                  </span>
                 </p>
+                <div
+                  style={{
+                    marginTop: "5px",
+                    padding: "5px 8px",
+                    width: "100%",
+                    background: "#E9F7FA ",
+                    borderTop: "3px #24C3FD solid",
+                  }}
+                >
+                  <i className="fa-solid fa-qrcode"></i>
+                  <span
+                    className="ps-2"
+                    style={{ fontWeight: "550", opacity: "0.9" }}
+                  >
+                    Giảm 30K cho SP từ 100K khi thanh toán qua VNPay
+                  </span>
+                </div>
+                <div
+                  className="mb-3"
+                  style={{
+                    fontWeight: "550",
+                    color: "dimgray",
+                    fontSize: "16px",
+                    fontFamily: "arial",
+                  }}
+                >
+                  <div className="mt-2">
+                    Trạng Thái:{" "}
+                    {item.quantity
+                      ? `Còn Hàng ${item.quantity} sản phẩm`
+                      : "Hết Hàng"}
+                  </div>
+
+                  <div>Chất liệu: {item.fabric}</div>
+                  <div>
+                    QUY ĐỊNH ĐỔI TRẢ: <br />
+                    - Đối với mặt hàng giảm giá, vui lòng không đổi trả. <br />-
+                    Đối với hàng mới, shop chỉ nhận đổi các sản phẩm bị lỗi sản
+                    xuất còn nguyên tag chưa qua sử dụng trong vòng 3 ngày...
+                  </div>
+                </div>
+                <hr />
+                <p className="d-flex h5 flex-wrap pt-2">
+                  {item.color.length} màu:
+                  {item.color.map((color, index) => (
+                    <div
+                      className="checked-input ps-1"
+                      key={index}
+                      onClick={handleSelectColor}
+                    >
+                      <input
+                        type="radio"
+                        name="color"
+                        id={`radio-${color}`}
+                        value={color}
+                      />
+                      <label htmlFor={`radio-${color}`}>
+                        <span className={`bg-${color} bg-color`}></span>
+                      </label>
+                    </div>
+                  ))}
+                </p>
+                <p className="d-flex h5 flex-wrap mt-3 align-items-center">
+                  Kích cỡ:
+                  {item.size.map((size, index) => (
+                    <div
+                      className="checked-input ps-1"
+                      key={index}
+                      onChange={handleSelectSize}
+                    >
+                      <input
+                        type="radio"
+                        name="size"
+                        id={`radio-${size}`}
+                        value={size}
+                      />
+                      <label htmlFor={`radio-${size}`} className="bg-size">
+                        <span className="text-center">{size}</span>
+                      </label>
+                    </div>
+                  ))}
+                </p>
+                <div className="my-3 quantity pb-2">
+                  <p className="h5 my-2 mt-3">Số lượng</p>
+                  <p className="qty">
+                    <button
+                      className="quantity-minus"
+                      aria-hidden="true"
+                      onClick={minsQuantity}
+                    >
+                      <i className="fa-solid fa-minus"></i>
+                    </button>
+                    <input
+                      type="number"
+                      name="qty"
+                      id="qty"
+                      value={quantity}
+                      onChange={handleChangeQuantity}
+                    />
+                    <button
+                      className="quantity-plus"
+                      aria-hidden="true"
+                      onClick={plusQuantity}
+                    >
+                      <i className="fa-solid fa-plus"></i>
+                    </button>
+                  </p>
+                </div>
+                <div>
+                  <button
+                    className="bg-black text-white py-3 w-100 fs-5 badge rounded"
+                    onClick={addOrder}
+                  >
+                    Thêm vào giỏ hàng
+                  </button>
+                </div>
+                <hr />
+                <div style={{ fontSize: "17px", fontWeight: "550" }}>
+                  <p>
+                    Mã sản phẩm: P0{item.id}T{item.typeId}
+                  </p>
+                  <p
+                    className="d-flex justify-content-start align-items-center"
+                    style={{ gap: "5%", cursor: "pointer" }}
+                  >
+                    Chia sẻ:
+                    <a
+                      href="https://www.facebook.com/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-black"
+                    >
+                      <i className="fa-brands fa-facebook-f"></i>
+                    </a>
+                    <a
+                      href="https://www.google.com/intl/vi/gmail/about/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-black"
+                    >
+                      <i className="fa-brands fa-google"></i>
+                    </a>
+                    <a
+                      href="https://twitter.com/?lang=vi"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-black"
+                    >
+                      <i className="fa-brands fa-twitter"></i>
+                    </a>
+                    <a
+                      href="https://www.pinterest.com/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-black"
+                    >
+                      <i className="fa-solid fa-frog"></i>
+                    </a>
+                    <a
+                      href="https://www.skype.com/en/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-black"
+                    >
+                      <i className="fa-brands fa-skype"></i>
+                    </a>
+                  </p>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        <div style={{ padding: "1%", fontWeight: "550", color: "dimgray" }}>
-          <div
-            className="h5 text-black d-flex mb-3"
-            style={{ gap: "5%", borderBottom: "1px solid lightgray" }}
-          >
-            <span
-              style={{ cursor: "pointer" }}
-              onClick={() => setComment(false)}
-              className={!comment ? "border-b-2px" : ""}
+          <div style={{ padding: "1%", fontWeight: "550", color: "dimgray" }}>
+            <div
+              className="h5 text-black d-flex mb-3"
+              style={{ gap: "5%", borderBottom: "1px solid lightgray" }}
             >
-              Mô tả sản phẩm
-            </span>
-            <span
-              style={{ cursor: "pointer" }}
-              onClick={() => setComment(true)}
-              className={comment ? "border-b-2px" : ""}
-            >
-              Bình luận
-            </span>
+              <span
+                style={{ cursor: "pointer" }}
+                onClick={() => setComment(false)}
+                className={!comment ? "border-b-2px" : ""}
+              >
+                Mô tả sản phẩm
+              </span>
+              <span
+                style={{ cursor: "pointer" }}
+                onClick={() => setComment(true)}
+                className={comment ? "border-b-2px" : ""}
+              >
+                Bình luận
+              </span>
+            </div>
+            {!comment ? (
+              <>
+                <p>Chất liệu: {item.fabric}</p>
+                <p>QUY ĐỊNH ĐỔI TRẢ: </p>
+                <p>- Đối với mặt hàng giảm giá, vui lòng không đổi trả. </p>
+                <p>
+                  - Đối với hàng mới, shop chỉ nhận đổi các sản phẩm bị lỗi sản
+                  xuất còn nguyên tag chưa qua sử dụng trong vòng 3 ngày kể từ
+                  ngày nhận được hàng.
+                </p>
+                <p>
+                  - Nhận đổi trả size trong vòng 3 ngày kể từ ngày nhận hàng,
+                  phí ship đổi size quý khách vui lòng thanh toán 2 chiều.
+                </p>
+                <p>HƯỚNG DẪN CHỌN SIZE: </p>
+                <p>- Size S: 1m65-1m72, 53kg-65kg </p>
+                <p>- Size M: 1m73-1m78, 66kg-72kg </p>
+                <p>- Size L: 1m80-1m85, 72kg-85kg</p>
+              </>
+            ) : (
+              <Comments />
+            )}
           </div>
-          {!comment ? (
-            <>
-              <p>Chất liệu: {item.fabric}</p>
-              <p>QUY ĐỊNH ĐỔI TRẢ: </p>
-              <p>- Đối với mặt hàng giảm giá, vui lòng không đổi trả. </p>
-              <p>
-                - Đối với hàng mới, shop chỉ nhận đổi các sản phẩm bị lỗi sản
-                xuất còn nguyên tag chưa qua sử dụng trong vòng 3 ngày kể từ
-                ngày nhận được hàng.
-              </p>
-              <p>
-                - Nhận đổi trả size trong vòng 3 ngày kể từ ngày nhận hàng, phí
-                ship đổi size quý khách vui lòng thanh toán 2 chiều.
-              </p>
-              <p>HƯỚNG DẪN CHỌN SIZE: </p>
-              <p>- Size S: 1m65-1m72, 53kg-65kg </p>
-              <p>- Size M: 1m73-1m78, 66kg-72kg </p>
-              <p>- Size L: 1m80-1m85, 72kg-85kg</p>
-            </>
-          ) : (
-            <Comments />
-          )}
-        </div>
-        <div className="row">
-          <SimilarItem item={item} listItem={listItem} />
+          <div className="row">
+            <SimilarItem item={item} listItem={listItem} />
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }

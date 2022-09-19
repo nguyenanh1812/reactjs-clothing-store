@@ -1,20 +1,20 @@
 export const addOrderList = (data) => {
   return {
-    type: "orderList/addRecipe",
+    type: "orderList/addOrderList",
     payload: data,
   };
 };
 
 export const updateOrderList = (data) => {
   return {
-    type: "orderList/updateRecipe",
+    type: "orderList/updateOrderList",
     payload: data,
   };
 };
 
 export const removeOrderList = (data) => {
   return {
-    type: "orderList/removeRecipe",
+    type: "orderList/removeOrderList",
     payload: data,
   };
 };

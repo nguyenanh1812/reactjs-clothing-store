@@ -295,3 +295,22 @@
   vertical-align: middle;
   border-radius: 2px;
 }
+
+.alert-hidden {
+  animation: animate 3s linear infinite;
+}
+
+@keyframes animate{
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  80% {
+    opacity: 0.4;
+  }
+  100% {
+    opacity: 0;
+  }
+}
