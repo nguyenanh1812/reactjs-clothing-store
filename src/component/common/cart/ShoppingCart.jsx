@@ -1,32 +1,52 @@
 import React, { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
-import { orderListSelector } from "../../../redux/selectors";
+// import { useSelector } from "react-redux";
+// import { orderListSelector } from "../../../redux/selectors";
+import ItemCart from "./ItemCart";
 
 export default function ShoppingCart() {
-  const [orderList, setOrderList] = useState(useSelector(orderListSelector));
+  // const [orderList, setOrderList] = useState(useSelector(orderListSelector));
+  const [orderList, setOrderList] = useState();
   useEffect(() => {
     if (JSON.parse(localStorage.getItem("clothingKey"))) {
       setOrderList(JSON.parse(localStorage.getItem("clothingKey")));
     }
   }, []);
 
-  console.log(orderList);
   return (
-    <div className="bg-primary text-white h5">
-      <div className="container mt-5 py-5">
-        {orderList.map((item) => (
-          <div
-            key={item.id}
-            className="d-flex justify-content-start align-items-center my-2"
-            style={{ gap: "5px" }}
-          >
-            <div className="w-25">Tên Sản phẩm: {item.name}</div>
-            <div className="w-25">Giá sản phẩm: {item.price}</div>
-            <div className="w-25">Số lượng: {item.quantity}</div>
-            <div className="w-25">Tổng đơn hàng: {item.total}</div>
+    <>
+      <h3 className="container mt-5 pt-5">|Giỏ hàng</h3>
+      {!orderList ? (
+        <div> Chưa có sản phẩm nào</div>
+      ) : (
+        <div className="text-black" style={{ minHeight: "500px" }}>
+          <div className="container py-2">
+            <table className="table">
+              <thead>
+                <tr class="table-active align-middle" style={{height: '60px'}}>
+                  <th>
+                    <input
+                      type="checkbox"
+                      className="form-check-input mt-0"
+                      style={{ boxShadow: "none" }}
+                    />
+                  </th>
+                  <th scope="col">Sản phẩm</th>
+                  <th scope="col">Phân loại hàng</th>
+                  <th scope="col">Đơn Giá</th>
+                  <th scope="col">Số lượng</th>
+                  <th scope="col">Số tiền</th>
+                  <th scope="col">Thao tác</th>
+                </tr>
+              </thead>
+              <tbody>
+                {orderList.map((item) => (
+                  <ItemCart item={item} />
+                ))}
+              </tbody>
+            </table>
           </div>
-        ))}
-      </div>
-    </div>
+        </div>
+      )}
+    </>
   );
 }

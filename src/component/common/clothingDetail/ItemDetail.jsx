@@ -76,7 +76,11 @@ export default function ItemDetail({ item, listItem }) {
         name: item.name,
         price: item.price,
         quantity: quantity,
-        total: item.price * quantity,
+        total: (item.price * quantity).toFixed(3),
+        color: color,
+        size: size,
+        listColor: item.color,
+        listSize: item.size,
       },
     ]);
     setAlertSuccess(true);
