@@ -22,7 +22,7 @@ export default function ShoppingCart() {
           <div className="container py-2">
             <table className="table">
               <thead>
-                <tr class="table-active align-middle" style={{height: '60px'}}>
+                <tr className="table-active align-middle" style={{height: '60px'}}>
                   <th>
                     <input
                       type="checkbox"

@@ -1,0 +1,57 @@
+.filter-wrap {
+    line-height: 30px;
+    float: right;
+    height: 32px;
+    font-size: 13px;
+    text-align: center;
+}
+
+.filter-wrap ul, .filter-wra li {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.filter-wrap .filter-category ul {
+    display: none;
+    width: 160px;
+    position: absolute;
+    z-index: 100;
+    background: #fafafa;
+    left: -1px;
+    border: 1px solid #eee;
+}
+
+.filter-wrap .filter-category ul li {
+    line-height: 20px;
+    padding: 5px;
+    border: 1px solid transparent;
+    border-bottom: 1px solid #eee;
+    text-align: left;
+}
+
+.filter-wrap .filter-category ul li:hover {
+    background: #fff;
+}
+
+.filter-category {
+    position: relative;
+    display: inline-block;
+    padding-left: 10px;
+    padding-right: 10px;
+    border: 1px solid transparent;
+    z-index: 101;
+    line-height: 30px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.filter-category:hover{
+    background: #fff;
+    border: 1px solid #eee;
+}
+
+.filter-category:hover ul {
+    display: block;
+}
+

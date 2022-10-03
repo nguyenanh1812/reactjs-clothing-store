@@ -1,20 +1,108 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { clothes } from "../../../data";
 
 export default function FeMale() {
+  const [list, setList] = useState(clothes.filter((e) => !e.forMan));
   useEffect(() => {
     document.title = "Quần áo cho nữ";
   }, []);
+  const handleFilter = (e) => {
+    switch (e.target.innerText) {
+      case "Áo":
+        setList(clothes.filter((e) => !e.forMan).filter((e) => e.typeId === 1));
+        break;
+      case "Quần":
+        setList(clothes.filter((e) => !e.forMan).filter((e) => e.typeId === 2));
+        break;
+      case "Túi sách":
+        setList(clothes.filter((e) => !e.forMan).filter((e) => e.typeId === 3));
+        break;
+      case "Mũ":
+        setList(clothes.filter((e) => !e.forMan).filter((e) => e.typeId === 4));
+        break;
+      case "Váy":
+        setList(clothes.filter((e) => !e.forMan).filter((e) => e.typeId === 5));
+        break;
+      default:
+        alert("Có lỗi gì đó đang xảy ra!");
+    }
+  };
+  
+  console.log(list);
+  const handleSort = (e) => {
+    switch (e.target.innerText) {
+      case "Giá: tăng dần":
+        setList(list.sort((a,b)=> parseFloat(a.price) - parseFloat(b.price)));
+        break;
+      case "Giá: giảm dần":
+        setList(list.sort((a,b)=> !(parseFloat(a.price) - parseFloat(b.price))));
+        break;
+      case "A-Z":
+        setList(list.sort((a,b)=> a.name.localeCompare(b.name)));
+        break;
+      case "Z-A":
+        setList(list.sort((a,b)=> !a.name.localeCompare(b.name)));
+        break;
+      case "Cũ nhất":
+        setList(list.sort((a,b)=> parseFloat(a.id) - parseFloat(b.id)));
+        break;
+      case "Mới nhất":
+        setList(list.sort((a,b)=> !(parseFloat(a.id) - parseFloat(b.id))));
+        break;
+      case "Bán chạy nhất":
+        setList(list.sort((a,b)=> a.name.localeCompare(b.name)));
+        break;
+      case "Giảm giá nhiều nhất":
+        setList(list.sort((a,b)=> !(parseFloat(a.id) - parseFloat(b.id))));
+        break;
+      default:
+        alert("Có lỗi gì đó đang xảy ra!");
+    }
+  };
   return (
     <>
-      <div className="text-center h2 pt-5">FeMale</div>
-      <div className="d-flex flex-wrap mb-center" style={{ padding: "1%" }}>
-        {clothes.filter(e=>!e.forMan).map((item) => (
+      <div className="container pt-5" style={{ padding: "0 32px 0 32px" }}>
+        <div className="d-flex justify-content-between">
+          <h2>Quần áo nam</h2>
+          <div className="d-flex ">
+            <div className="px-4 filter-wrap">
+              <div className="filter-category">
+                Lọc danh mục <i className="fas fa-chevron-down"></i>
+                <ul onClick={handleFilter}>
+                  <li>Áo</li>
+                  <li>Quần</li>
+                  <li>Túi sách</li>
+                  <li>Mũ</li>
+                  <li>Váy</li>
+                </ul>
+              </div>
+            </div>
+            <div className="filter-wrap">
+              <div className="filter-category">
+                Sắp xếp theo <i className="fas fa-chevron-down"></i>
+                <ul onClick={handleSort}>
+                  <li>Giá: tăng dần</li>
+                  <li>Giá: giảm dần</li>
+                  <li>A-Z</li>
+                  <li>Z-A</li>
+                  <li>Cũ nhất</li>
+                  <li>Mới nhất</li>
+                  <li>Bán chạy nhất</li>
+                  <li>Giảm giá nhiều nhất</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div style={{ borderBottom: "1px dashed #ccc" }}></div>
+      </div>
+      <div className="container d-flex flex-wrap mb-center">
+        {list.map((item) => (
           <div
             key={item.id}
-            className="col-xxl-3 col-lg-4 col-md-6 my-1 home__product"
-            style={{ padding: "2%" }}
+            className="col-xxl-3 col-lg-4 col-md-6 home__product"
+            style={{ padding: "20px" }}
           >
             <Link to={`/products-${item.id}`}>
               <div className="position-relative">

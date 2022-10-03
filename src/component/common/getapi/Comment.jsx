@@ -7,8 +7,8 @@ export default function Comment() {
     axios
       .get("https://jsonplaceholder.typicode.com/comments")
       .then((result) => {
-        const commnets = result.data;
-        setApi(commnets);
+        const comments = result.data;
+        setApi(comments);
       });
   }, []);
   return (

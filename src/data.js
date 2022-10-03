@@ -1,9 +1,9 @@
 export const typeOfClothes = [
   { id: 1, name: "áo" },
-  { id: 1, name: "quần" },
-  { id: 1, name: "túi" },
-  { id: 1, name: "mũ" },
-  { id: 1, name: "váy" },
+  { id: 2, name: "quần" },
+  { id: 3, name: "túi sách" },
+  { id: 4, name: "mũ" },
+  { id: 5, name: "váy" },
 ];
 export const clothes = [
   {
