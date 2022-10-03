@@ -28,11 +28,11 @@ export default function ItemCart({ item }) {
         height: 100,
       }}
     >
-      <td scope="col">
+      <td>
         <input type="checkbox" className="form-check-input mt-0" />
       </td>
-      <td scope="col">{item.name}</td>
-      <td scope="col">
+      <td>{item.name}</td>
+      <td>
         <div className="d-flex align-items-start position-relative" style={{ gap: 5, cursor: "pointer" }}>
           <div onClick={()=> setDisplay(!display)}>
             Phân loại hàng: {item.color} {item.size}
@@ -86,10 +86,10 @@ export default function ItemCart({ item }) {
             )}
         </div>
       </td>
-      <td scope="col">Giá sản phẩm: {item.price}</td>
-      <td scope="col">Số lượng: {item.quantity}</td>
-      <td scope="col">Tổng đơn hàng: {item.total} VNĐ</td>
-      <td scope="col">
+      <td>Giá sản phẩm: {item.price}</td>
+      <td>Số lượng: {item.quantity}</td>
+      <td>Tổng đơn hàng: {item.total} VNĐ</td>
+      <td>
         <button className="btn btn-danger bg-danger" onClick={handleDelete}>
           Xóa
         </button>

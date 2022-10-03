@@ -28,33 +28,41 @@ export default function FeMale() {
         alert("Có lỗi gì đó đang xảy ra!");
     }
   };
-  
-  console.log(list);
+
+  useEffect(() => {
+    console.log("list", list);
+  }, [list]);
   const handleSort = (e) => {
     switch (e.target.innerText) {
       case "Giá: tăng dần":
-        setList(list.sort((a,b)=> parseFloat(a.price) - parseFloat(b.price)));
+        setList(
+          [...list].sort((a, b) => parseFloat(a.price) - parseFloat(b.price))
+        );
         break;
       case "Giá: giảm dần":
-        setList(list.sort((a,b)=> !(parseFloat(a.price) - parseFloat(b.price))));
+        setList(
+          [...list].sort((a, b) => parseFloat(b.price) - parseFloat(a.price))
+        );
         break;
       case "A-Z":
-        setList(list.sort((a,b)=> a.name.localeCompare(b.name)));
+        setList([...list].sort((a, b) => a.name.localeCompare(b.name)));
         break;
       case "Z-A":
-        setList(list.sort((a,b)=> !a.name.localeCompare(b.name)));
+        setList([...list].sort((a, b) => b.name.localeCompare(a.name)));
         break;
       case "Cũ nhất":
-        setList(list.sort((a,b)=> parseFloat(a.id) - parseFloat(b.id)));
+        setList([...list].sort((a, b) => parseFloat(a.id) - parseFloat(b.id)));
         break;
       case "Mới nhất":
-        setList(list.sort((a,b)=> !(parseFloat(a.id) - parseFloat(b.id))));
+        setList([...list].sort((a, b) => parseFloat(b.id) - parseFloat(a.id)));
         break;
       case "Bán chạy nhất":
-        setList(list.sort((a,b)=> a.name.localeCompare(b.name)));
+        setList([...list].sort((a, b) => a.name.localeCompare(b.name)));
         break;
       case "Giảm giá nhiều nhất":
-        setList(list.sort((a,b)=> !(parseFloat(a.id) - parseFloat(b.id))));
+        setList(
+          [...list].sort((a, b) => parseFloat(b.percentDiscount) - parseFloat(a.percentDiscount))
+        );
         break;
       default:
         alert("Có lỗi gì đó đang xảy ra!");
@@ -166,6 +174,8 @@ export default function FeMale() {
             </div>
           </div>
         ))}
+
+        {list === [] && <div> Sản phẩm đang được cập nhật!</div>}
       </div>
     </>
   );

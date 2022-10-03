@@ -8,6 +8,67 @@ export default function FeMale() {
   useEffect(() => {
     document.title = "Quần áo cho nam";
   }, []);
+
+  const handleFilter = (e) => {
+    switch (e.target.innerText) {
+      case "Áo":
+        setList(clothes.filter((e) => e.forMan).filter((e) => e.typeId === 1));
+        break;
+      case "Quần":
+        setList(clothes.filter((e) => e.forMan).filter((e) => e.typeId === 2));
+        break;
+      case "Túi sách":
+        setList(clothes.filter((e) => e.forMan).filter((e) => e.typeId === 3));
+        break;
+      case "Mũ":
+        setList(clothes.filter((e) => e.forMan).filter((e) => e.typeId === 4));
+        break;
+      case "Váy":
+        setList(clothes.filter((e) => e.forMan).filter((e) => e.typeId === 5));
+        break;
+      default:
+        alert("Có lỗi gì đó đang xảy ra!");
+    }
+  };
+
+  const handleSort = (e) => {
+    switch (e.target.innerText) {
+      case "Giá: tăng dần":
+        setList(
+          [...list].sort((a, b) => parseFloat(a.price) - parseFloat(b.price))
+        );
+        break;
+      case "Giá: giảm dần":
+        setList(
+          [...list].sort((a, b) => parseFloat(b.price) - parseFloat(a.price))
+        );
+        break;
+      case "A-Z":
+        setList([...list].sort((a, b) => a.name.localeCompare(b.name)));
+        break;
+      case "Z-A":
+        setList([...list].sort((a, b) => b.name.localeCompare(a.name)));
+        break;
+      case "Cũ nhất":
+        setList([...list].sort((a, b) => parseFloat(a.id) - parseFloat(b.id)));
+        break;
+      case "Mới nhất":
+        setList(
+          [...list].sort((a, b) => parseFloat(b.id) - parseFloat(a.id))
+        );
+        break;
+      case "Bán chạy nhất":
+        setList([...list].sort((a, b) => a.name.localeCompare(b.name)));
+        break;
+      case "Giảm giá nhiều nhất":
+        setList(
+          [...list].sort((a, b) => parseFloat(b.percentDiscount) - parseFloat(a.percentDiscount))
+        );
+        break;
+      default:
+        alert("Có lỗi gì đó đang xảy ra!");
+    }
+  };
   return (
     <>
       <div className="container pt-5" style={{ padding: "0 32px 0 32px" }}>
@@ -17,7 +78,7 @@ export default function FeMale() {
             <div className="px-4 filter-wrap">
               <div className="filter-category">
                 Lọc danh mục <i className="fas fa-chevron-down"></i>
-                <ul>
+                <ul onClick={handleFilter}>
                   <li>Áo</li>
                   <li>Quần</li>
                   <li>Túi sách</li>
@@ -28,7 +89,7 @@ export default function FeMale() {
             <div className="filter-wrap">
               <div className="filter-category">
                 Sắp xếp theo <i className="fas fa-chevron-down"></i>
-                <ul>
+                <ul onClick={handleSort}>
                   <li>Giá: tăng dần</li>
                   <li>Giá: giảm dần</li>
                   <li>A-Z</li>
@@ -113,6 +174,8 @@ export default function FeMale() {
             </div>
           </div>
         ))}
+
+        {list === [] && <div> Sản phẩm đang được cập nhật!</div>}
       </div>
     </>
   );

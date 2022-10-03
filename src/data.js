@@ -252,7 +252,7 @@ export const clothes = [
     imgURL:
       "https://product.hstatic.net/1000348721/product/dsc_7578__1__064e74485f224f9986e26514c6550242_master.jpg",
     name: "AURORA VARSITY",
-    price: "1.299.000",
+    price: "999.000",
     forMan: true,
     new: false,
     percentDiscount: 60,
@@ -489,7 +489,7 @@ export const clothes = [
     id: 21,
     typeId: 1,
     imgURL:
-      "https://cdn.ssstutter.com/products/po0EUQXd52Ks47dT/062022/1655470074135.jpeg",
+      "https://static2.yan.vn/YanNews/2167221/202002/4-loai-quan-tay-nam-dep-nen-co-cho-ban-nam-nam-2020-51d46f12.jpg",
     name: "BzI Pant",
     price: "489.000",
     forMan: true,

@@ -30,12 +30,12 @@ export default function ShoppingCart() {
                       style={{ boxShadow: "none" }}
                     />
                   </th>
-                  <th scope="col">Sản phẩm</th>
-                  <th scope="col">Phân loại hàng</th>
-                  <th scope="col">Đơn Giá</th>
-                  <th scope="col">Số lượng</th>
-                  <th scope="col">Số tiền</th>
-                  <th scope="col">Thao tác</th>
+                  <th >Sản phẩm</th>
+                  <th>Phân loại hàng</th>
+                  <th>Đơn Giá</th>
+                  <th>Số lượng</th>
+                  <th>Số tiền</th>
+                  <th>Thao tác</th>
                 </tr>
               </thead>
               <tbody>
