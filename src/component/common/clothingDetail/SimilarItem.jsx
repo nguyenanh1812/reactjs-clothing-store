@@ -36,7 +36,7 @@ export default function SimilarItem({ item, listItem }) {
               <SwiperSlide key={e.id}>
                 <div className="item px-1">
                   <Link to={`/products-${e.id}`}>
-                    <img src={e.imgURL} alt="shirt img" className="w-100" />
+                    <img src={e.imgURL} alt="shirt img" className="w-100"  loading="lazy" />
                   </Link>
                   <h4 className="text-center mt-3">{e.name}</h4>
                   <p className="text-center">Giá: {e.price} đ</p>

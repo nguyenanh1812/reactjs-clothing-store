@@ -106,6 +106,7 @@ export default function ItemDetail({ item, listItem }) {
                 src={item.imgURL}
                 alt="product img"
                 className="img-fluid h-100"
+                loading="lazy"
               />
               <div
                 className="position-absolute text-white text-center"

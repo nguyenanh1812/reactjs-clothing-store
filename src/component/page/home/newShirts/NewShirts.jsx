@@ -83,7 +83,7 @@ export default function Slide({newShirts}) {
                   <SwiperSlide key={shirt.id}>
                     <div className="item px-1">
                       <Link to={`/products-${shirt.id}`}>
-                        <img src={shirt.imgURL} alt="shirt img" />
+                        <img src={shirt.imgURL} alt="shirt img"  loading="lazy" />
                       </Link>
                       <h4 className="text-center mt-3">{shirt.name}</h4>
                       <p className="text-center">Giá: {shirt.price} đ</p>

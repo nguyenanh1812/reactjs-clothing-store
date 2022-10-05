@@ -77,6 +77,7 @@ export default function WeeklyBest({ clothes }) {
                             src={item.imgURL}
                             alt="product img"
                             className="img-fluid"
+                            loading="lazy"
                           />
                           <div
                             className="position-absolute text-white text-center"

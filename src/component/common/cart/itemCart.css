@@ -21,5 +21,6 @@
 }
 
 .transform-reverse{
-    transform: rotate(180deg);
+    transform: rotateX(180deg);
+    transition:  .5s all;
 }

@@ -46,6 +46,7 @@ export default function FeMale() {
             src="https://sss-dashboard.leanservices.work/upload/8-2022/1661392936316.jpeg"
             alt="49k"
             className="w-100"
+            loading="lazy"
           />
         </Carousel.Item>
         <Carousel.Item>
@@ -53,6 +54,7 @@ export default function FeMale() {
             src="https://sss-dashboard.leanservices.work/upload/8-2022/1660796306935.jpeg"
             alt="49k"
             className="w-100"
+            loading="lazy"
           />
         </Carousel.Item>
       </Carousel>
@@ -71,6 +73,7 @@ export default function FeMale() {
                   src={item.imgURL}
                   alt="product img"
                   className="img-fluid"
+                  loading="lazy"
                 />
                 <div
                   className="position-absolute text-white text-center"

@@ -44,6 +44,7 @@ export default function Home({ clothes }) {
             className="d-block w-100"
             src="https://sss-dashboard.leanservices.work/upload/7-2022/1657272384575.jpeg"
             alt="First slide"
+            loading="lazy"
           />
           <Carousel.Caption>
             <h5>Siêu Sale tháng 9</h5>
@@ -55,6 +56,7 @@ export default function Home({ clothes }) {
             className="d-block w-100"
             src="https://sss-dashboard.leanservices.work/upload/7-2022/1657247385857.jpeg"
             alt="Second slide"
+            loading="lazy"
           />
           <Carousel.Caption>
             <h5>Đa dạng mẫu mã</h5>
@@ -66,6 +68,7 @@ export default function Home({ clothes }) {
             className="d-block w-100"
             src="https://sss-dashboard.leanservices.work/upload/7-2022/1657248131185.jpeg"
             alt="Third slide"
+            loading="lazy"
           />
           <Carousel.Caption>
             <h5>Thoải mái phá cách</h5>
@@ -125,6 +128,7 @@ export default function Home({ clothes }) {
               className="d-block w-100"
               src="https://sss-dashboard.leanservices.work/upload/6-2022/1654482574066.jpeg"
               alt="First slide"
+              loading="lazy"
             />
           </Carousel.Item>
           <Carousel.Item>
@@ -132,6 +136,7 @@ export default function Home({ clothes }) {
               className="d-block w-100"
               src="https://sss-dashboard.leanservices.work/upload/6-2022/1654482697748.jpeg"
               alt="Second slide"
+              loading="lazy"
             />
           </Carousel.Item>
           <Carousel.Item>
@@ -139,6 +144,7 @@ export default function Home({ clothes }) {
               className="d-block w-100"
               src="https://sss-dashboard.leanservices.work/upload/8-2022/1659522122144.jpeg"
               alt="3th slide"
+              loading="lazy"
             />
           </Carousel.Item>
         </Carousel>

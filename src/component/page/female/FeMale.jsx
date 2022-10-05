@@ -29,9 +29,6 @@ export default function FeMale() {
     }
   };
 
-  useEffect(() => {
-    console.log("list", list);
-  }, [list]);
   const handleSort = (e) => {
     switch (e.target.innerText) {
       case "Giá: tăng dần":
@@ -68,6 +65,11 @@ export default function FeMale() {
         alert("Có lỗi gì đó đang xảy ra!");
     }
   };
+
+  useEffect(() => {
+    console.log("list", list);
+  }, [list]);
+  
   return (
     <>
       <div className="container pt-5" style={{ padding: "0 32px 0 32px" }}>
@@ -118,6 +120,7 @@ export default function FeMale() {
                   src={item.imgURL}
                   alt="product img"
                   className="img-fluid"
+                  loading="lazy"
                 />
                 <div
                   className="position-absolute text-white text-center"

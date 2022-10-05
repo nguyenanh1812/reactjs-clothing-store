@@ -12,6 +12,12 @@ export default function ShoppingCart() {
     }
   }, []);
 
+  const updateCart = (id, color, size) => {
+    console.log(id, color, size);
+    // localStorage.setItem()
+    // setOrderList(JSON.parse(localStorage.getItem("clothingKey")));
+  };
+
   return (
     <>
       <h3 className="container mt-5 pt-5">|Giỏ hàng</h3>
@@ -22,7 +28,10 @@ export default function ShoppingCart() {
           <div className="container py-2">
             <table className="table">
               <thead>
-                <tr className="table-active align-middle" style={{height: '60px'}}>
+                <tr
+                  className="table-active align-middle"
+                  style={{ height: "60px" }}
+                >
                   <th>
                     <input
                       type="checkbox"
@@ -30,7 +39,7 @@ export default function ShoppingCart() {
                       style={{ boxShadow: "none" }}
                     />
                   </th>
-                  <th >Sản phẩm</th>
+                  <th>Sản phẩm</th>
                   <th>Phân loại hàng</th>
                   <th>Đơn Giá</th>
                   <th>Số lượng</th>
@@ -40,10 +49,42 @@ export default function ShoppingCart() {
               </thead>
               <tbody>
                 {orderList.map((item) => (
-                  <ItemCart item={item} />
+                  <ItemCart key={item.id} item={item} updateCart={updateCart} />
                 ))}
               </tbody>
             </table>
+            <div
+              className="position-sticky d-flex justify-content-between align-items-center text-black p-3"
+              style={{ height: "100px", background: '#e1d8d8' }}
+            >
+              <div className="d-flex align-items-center justify-content-start">
+                <input
+                  type="checkbox"
+                  className="form-check-input mt-0 me-2"
+                  style={{ boxShadow: "none" }}
+                  name="allP"
+                />
+                <label htmlFor="allP">Chọn tất cả</label>
+              </div>
+              <div className="text-danger" style={{ cursor: "pointer" }}>
+                Xóa
+              </div>
+              <div className="w-50 d-flex align-items-center justify-content-start">
+                <div className="w-50">Tổng thanh toán(0 sản phẩm)</div>
+                <div
+                  className="w-25"
+                  style={{ color: "orange", cursor: "pointer" }}
+                >
+                  {" "}
+                  Sử dụng voucher
+                </div>
+                <div className="w-50">
+                  <button className="btn btn-success btn-sm w-100">
+                    Mua Hàng
+                  </button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       )}
