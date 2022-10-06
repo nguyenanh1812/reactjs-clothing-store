@@ -1,27 +1,30 @@
 import React, { useState } from "react";
 import './itemCart.css'
 
-export default function ItemCart({ item, updateCart }) {
+export default function ItemCart({ item, updateCart, updateBill, deleteItem }) {
   const [color, setColor] = useState(item.color);
   const [size, setSize] = useState(item.size);
   const [display, setDisplay] = useState(false);
 
   const handleSelectColor = (event) => {
     setColor(event.target.value);
-    console.log(color);
   };
 
   const handleSelectSize = (event) => {
     setSize(event.target.value);
-    console.log(size);
   };
 
   const handleDelete = () => {
-    alert(item.id);
+    deleteItem(item)
   };
 
   const handleUpdate = () => {
     updateCart(item.id, color, size)
+  }
+
+  const handleChangeInput = (item) => { 
+    updateBill(item)
+    // updateBill(item,REMOVE)
   }
 
   return (
@@ -33,7 +36,7 @@ export default function ItemCart({ item, updateCart }) {
       }}
     >
       <td>
-        <input type="checkbox" className="form-check-input mt-0" />
+        <input type="checkbox" className="form-check-input mt-0" onChange={()=> handleChangeInput(item)}/>
       </td>
       <td>{item.name}</td>
       <td>
@@ -115,10 +118,9 @@ export default function ItemCart({ item, updateCart }) {
       <td>Số lượng: {item.quantity}</td>
       <td>Tổng đơn hàng: {item.total} VNĐ</td>
       <td>
-        <button className="btn btn-danger bg-danger" onClick={handleDelete}>
+        <button className="btn btn-danger bg-danger btn-sm w-100" onClick={handleDelete}>
           Xóa
         </button>
-        <button className="btn btn-warning bg-warning ms-2">Mua hàng</button>
       </td>
     </tr>
   );
