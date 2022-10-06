@@ -32,7 +32,6 @@ export default function ShoppingCart() {
     setOrderList(cartStorage);
     if (!cartStorage.length) {
       return localStorage.removeItem("clothingKey");
-      console.log(2)
     }
     return localStorage.setItem("clothingKey",  JSON.stringify(cartStorage));
   };
