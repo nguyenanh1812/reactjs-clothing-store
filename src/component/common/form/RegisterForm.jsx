@@ -35,7 +35,7 @@ export default function RegisterForm() {
             user: { token },
           } = res.data;
           //Luu token vào local storage
-          localStorage.setItem('token', JSON.stringify(token));
+          localStorage.setItem("token", JSON.stringify(token));
           // Khi config api sẽ lấy token từ local storage
         }
       });
@@ -47,39 +47,52 @@ export default function RegisterForm() {
   }, [password, email]);
 
   return (
-    <div className="container my-5 py-5">
-      <Form>
-        <Form.Group className="mb-3" controlId="formBasicEmail">
-          <Form.Label>Email address</Form.Label>
-          <Form.Control
-            name="email"
-            type="email"
-            placeholder="Enter email"
-            defaultValue={email}
-            onChange={(event) => handleType(event)}
-          />
-          <Form.Text className="text-muted">
-            We'll never share your email with anyone else.
-          </Form.Text>
-        </Form.Group>
+    <div className="container my-5 py-5 d-flex align-items-center">
+      <div className="w-50">
+        <img
+          src="https://img.freepik.com/free-vector/access-control-system-abstract-concept_335657-3180.jpg?w=826&t=st=1665155626~exp=1665156226~hmac=3ba3f75cc6a74af2a49fc1254b60c5d3fd5bd541ff466f6f9925a9b7143e9d8f"
+          alt=""
+          className="img-fluid"
+        />
+      </div>
+      <div className="w-50">
+        <Form>
+          <Form.Group className="mb-3" controlId="formBasicEmail">
+            <Form.Label className="fw-bolder">Tài khoản</Form.Label>
+            <Form.Control
+              name="email"
+              type="email"
+              placeholder="Điền Email"
+              defaultValue={email}
+              onChange={(event) => handleType(event)}
+            />
+            <Form.Text className="text-muted">
+              Tài khoản của bạn sẽ được bảo mật
+            </Form.Text> <br />
+          </Form.Group>
 
-        <Form.Group className="mb-3" controlId="formBasicPassword">
-          <Form.Label>Password</Form.Label>
-          <Form.Control
-            name="password"
-            type="password"
-            placeholder="Password"
-            defaultValue={password}
-            onChange={(event) => handleType(event)}
-          />
-        </Form.Group>
-        <Form.Group className="mb-3" controlId="formBasicCheckbox">
-          <Form.Check type="checkbox" label="Check me out" />
-        </Form.Group>
-        <Button variant="primary" type="submit" onClick={onSubmit}>
-          Submit
-        </Button>
-      </Form>
+          <Form.Group className="mb-3" controlId="formBasicPassword">
+            <Form.Label className="fw-bolder">Mật khẩu</Form.Label>
+            <Form.Control
+              name="password"
+              type="password"
+              placeholder="Điền mật khẩu"
+              defaultValue={password}
+              onChange={(event) => handleType(event)}
+            />
+          </Form.Group>
+          <Form.Group className="mb-3" controlId="formBasicCheckbox">
+            <Form.Check type="checkbox" label="Lưu mật khẩu" />
+          </Form.Group> <br /> 
+          <Button
+            type="submit"
+            onClick={onSubmit}
+            className="btn-md w-100 fw-bolder hover-btn-login"
+          >
+            Đăng nhập
+          </Button>
+        </Form>
+      </div>
     </div>
   );
 }

@@ -28,3 +28,14 @@ code {
     max-width: 344px;
   }
 }
+
+
+.hover-btn-login {
+  background-color: black;
+  border: none;
+  padding: 10px;
+}
+
+.hover-btn-login:hover {
+  background-color: rgb(209, 106, 106);
+}

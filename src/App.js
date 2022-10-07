@@ -13,12 +13,11 @@ import ItemDetail from "./component/common/clothingDetail/ItemDetail";
 import RegisterForm from "./component/common/form/RegisterForm";
 import ShoppingCart from "./component/common/cart/ShoppingCart";
 
-
 function App() {
   return (
     <>
-      <Header />
       <BrowserRouter>
+        <Header/>
         <Routes>
           <Route path="/" element={<Home clothes={clothes} />} />
           <Route path="/home" element={<Home clothes={clothes} />} />
@@ -37,9 +36,9 @@ function App() {
             />
           ))}
         </Routes>
+        <Footer />
+        <BackToTop />
       </BrowserRouter>
-      <Footer />
-      <BackToTop />
     </>
   );
 }

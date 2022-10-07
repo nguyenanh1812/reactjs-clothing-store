@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Alerts from "./Alerts";
+import { v4 as uuidv4 } from "uuid";
 // import { useDispatch, useSelector } from "react-redux";
 // import { addOrderList } from "../../../redux/actions";
 // import { orderListSelector } from "../../../redux/selectors";
@@ -72,7 +73,7 @@ export default function ItemDetail({ item, listItem }) {
     setCart([
       ...cart,
       {
-        id: cart.length + 1,
+        id: uuidv4(),
         name: item.name,
         price: item.price,
         quantity: quantity,

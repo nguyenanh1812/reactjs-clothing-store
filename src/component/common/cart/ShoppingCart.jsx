@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from 'react-router-dom';
 // import { useSelector } from "react-redux";
 // import { orderListSelector } from "../../../redux/selectors";
 import ItemCart from "./ItemCart";
 
 export default function ShoppingCart() {
   // const [orderList, setOrderList] = useState(useSelector(orderListSelector));
+  const navigate = useNavigate();
   const [orderList, setOrderList] = useState();
   const [bill, setBill] = useState({
     productList: [],
@@ -128,7 +130,7 @@ export default function ShoppingCart() {
                   Sử dụng voucher
                 </div>
                 <div className="w-50">
-                  <button className="btn btn-success btn-sm w-100">
+                  <button className="btn btn-success btn-sm w-100" onClick={()=> navigate('/login')}>
                     Mua Hàng
                   </button>
                 </div>
