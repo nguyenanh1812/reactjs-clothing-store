@@ -59,7 +59,7 @@ function Header({ clothes }) {
 
   useEffect(() => {
     setQuantityOrder(JSON.parse(localStorage.getItem("clothingKey") || "[]"));
-  }, []);
+  });
 
   const handleClick = (e) => {
     setTimeout(setPage(e), 10000);
