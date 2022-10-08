@@ -3,7 +3,7 @@ import "./header.css";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 // export default function Header() {
 //     return (
@@ -50,15 +50,16 @@ import { useLocation } from "react-router-dom";
 //     )
 // }
 
-function Header() {
+function Header({ clothes }) {
   const [page, setPage] = useState("");
   const { pathname } = useLocation();
-  const [quantityOrder, setQuantityOrder] = useState()
+  const navigate = useNavigate();
+  const [quantityOrder, setQuantityOrder] = useState();
+  const [search, setSearch] = useState("");
 
-  useEffect(()=> {
-    setQuantityOrder(JSON.parse(localStorage.getItem("clothingKey") || "[]"))
-  })
-
+  useEffect(() => {
+    setQuantityOrder(JSON.parse(localStorage.getItem("clothingKey") || "[]"));
+  }, []);
 
   const handleClick = (e) => {
     setTimeout(setPage(e), 10000);
@@ -70,6 +71,17 @@ function Header() {
       setPage(getName);
     }
   }, [pathname]);
+
+  const handleSearch = () => {
+    if (search !== "") {
+      clothes.forEach((item) => {
+        if (item.name.includes(search)) {
+          return navigate(`/products-${item.id}`);
+        }
+      });
+      // return navigate(`/home`);
+    }
+  };
 
   return (
     <>
@@ -91,7 +103,7 @@ function Header() {
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto mx-auto">
               <Nav.Link
-                className={`nav-item ${page === "home" ? "active" : ""}`}
+                className={`nav-item ${page === "home" || !page ? "active" : ""}`}
                 href="/home"
                 onClick={() => handleClick("home")}
               >
@@ -127,16 +139,47 @@ function Header() {
               </Nav.Link>
             </Nav>
             <div className="nav-icon">
-              <i className="fas fa-search"></i>
-              <Nav.Link href="/cart" className="d-inline p-0 m-0  position-relative">
-                <i className="fas fa-shopping-bag">
-                </i>
-                {quantityOrder && <span
+              <div
+                className="d-inline-search p-0 m-0 position-relative"
+                style={{ cursor: "pointer" }}
+              >
+                <input
+                  type="text"
+                  placeholder="Search by name..."
+                  style={{
+                    height: "30px",
+                    border: "none",
+                    borderBottom: "1px solid black",
+                    outline: "none",
+                    top: -10,
+                    right: 14,
+                    zIndex: 0,
+                  }}
+                  // className={`"position-absolute" ${search} ? 'inputSearch' : 'inputSearch2' `}
+                  onChange={(e) => setSearch(e.target.value)}
+                />
+                <i className="fas fa-search" onClick={() => handleSearch()}></i>
+              </div>
+              <Nav.Link
+                href="/cart"
+                className="d-inline p-0 m-0  position-relative"
+              >
+                <i className="fas fa-shopping-bag"></i>
+                {quantityOrder && (
+                  <span
                     className="position-absolute text-white fw-bolder"
-                    style={{ bottom: -8, right: 10, fontSize: 10, borderRadius: 999, padding: ".6px 3px", background: 'rgb(139 0 0)' }}
+                    style={{
+                      bottom: -8,
+                      right: 10,
+                      fontSize: 10,
+                      borderRadius: 999,
+                      padding: ".6px 3px",
+                      background: "rgb(139 0 0)",
+                    }}
                   >
                     {quantityOrder.length}
-                  </span>}
+                  </span>
+                )}
               </Nav.Link>
               <i className="far fa-heart"></i>
               <Nav.Link href="/login" className="d-inline p-0 m-0">

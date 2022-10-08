@@ -88,3 +88,21 @@ nav .img-logo {
         margin-top: 50px; 
     }
 }
+
+.inputSearch {
+    width: auto;
+}
+
+.inputSearch2 {
+    width: 0;
+}
+
+.d-inline-search {
+    display: inline;
+}
+
+@media screen and (max-Width: 768px) {
+    .d-inline-search {
+        display: block;
+    }
+}

@@ -1,5 +1,3 @@
-// import { useEffect, useState } from "react";
-
 const initState = {
   orderList: [
     {
@@ -7,14 +5,14 @@ const initState = {
       name: "quần",
       price: 1000,
       quantity: 3,
-      total: 3000
+      total: 3000,
     },
     {
       id: 2,
       name: "áo",
       price: 2000,
       quantity: 2,
-      total: 4000
+      total: 4000,
     },
   ],
   bill: [
@@ -43,14 +41,6 @@ const initState = {
   ],
 };
 
-// useEffect(()=> {
-//   const storageClothes = localStorage.getItem("clothingKey")
-//   if (storageClothes) {
-//     JSON.parse(storageClothes)
-//     console.log('localStorage', JSON.parse(storageClothes))
-//   }
-// }, [initState])
-
 const rootReducer = (state = initState, action) => {
   console.log(state, action);
   switch (action.type) {
@@ -76,28 +66,26 @@ const rootReducer = (state = initState, action) => {
       orderList1.splice(removeOrder, 1);
       return { ...state, orderList: orderList1 };
 
-    case "bill/addIngredient":
+    case "bill/addBill":
       return {
         ...state,
         shoppingList: [...state.bill, action.payload],
       };
 
-    case "bill/updateIngredient":
+    case "bill/updateBill":
       const bill = [...state.bill];
-      const index2 = bill.findIndex(
-        (b) => b.id === action.payload.id
-      );
+      const index2 = bill.findIndex((b) => b.id === action.payload.id);
       bill[index2] = action.payload;
       return { ...state, bill: bill };
 
-    case "bill/removeIngredient":
+    case "bill/removeBill":
       const bill1 = [...state.bill];
-      const removeBill = bill1.findIndex(
-        (b) => b.id === action.payload.id
-      );
+      const removeBill = bill1.findIndex((b) => b.id === action.payload.id);
       bill1.splice(removeBill, 1);
       return { ...state, bill: bill1 };
-
+    
+    case "product/Search": 
+    return  true;
     default:
       return state;
   }

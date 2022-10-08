@@ -39,3 +39,10 @@ export const removeBill = (data) => {
     payload: data,
   };
 };
+
+export const search = (data) => {
+  return {
+    type: "product/Search",
+    payload: data,
+  }
+}
